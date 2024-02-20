@@ -25,6 +25,7 @@ export default async function RootLayout({ children }) {
         <Header />
         {children}
         <PrismicPreview repositoryName={repositoryName} />
+        <script async defer src="https://static.cdn.prismic.io/prismic.js?new=true&repo=sinca"></script>
       </body>
     </html>
   );
