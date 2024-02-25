@@ -2,7 +2,7 @@ import "./globals.css";
 
 import { Inter } from "next/font/google";
 import { PrismicText } from "@prismicio/react";
-import { PrismicNextLink, PrismicPreview } from "@prismicio/next";
+import { PrismicNextLink, PrismicPreview, PrismicNextImage } from "@prismicio/next";
 import * as prismic from "@prismicio/client";
 
 import { createClient, repositoryName } from "@/prismicio";
@@ -38,11 +38,19 @@ async function Header() {
 
   return (
     <Bounded as="header" yPadding="sm">
-      <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-3 leading-none">
+      <div className="flex flex-wrap justify-between gap-x-6 gap-y-3 leading-none items-center border-b border-brand pb-4">
         <PrismicNextLink
           href="/"
-          className="text-xl font-semibold tracking-tight"
+          className="text-xl font-semibold tracking-tight flex flex-row items-center text-slate-800 gap-x-4"
         >
+          {prismic.isFilled.image(settings.data.logo) && (
+            <PrismicNextImage
+              field={settings.data.logo}
+              fallbackAlt='Fundatia Sinca Logo'
+              fill={false}
+              className="w-16 h-16"
+            />
+        )}
           <PrismicText field={settings.data.siteTitle} />
         </PrismicNextLink>
         <nav>

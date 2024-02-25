@@ -11,7 +11,7 @@ export function Header({ navigation, settings }) {
         <PrismicNextLink
           href="/"
           className="text-xl font-semibold tracking-tight"
-        >
+        >          
           <PrismicText field={settings.data.siteTitle} />
         </PrismicNextLink>
         <nav>
