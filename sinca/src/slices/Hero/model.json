@@ -86,6 +86,13 @@
             "select": null
           }
         },
+        "linkText": {
+          "type": "Text",
+          "config": {
+            "label": "Link Text",
+            "placeholder": ""
+          }
+        },
         "image": {
           "type": "Image",
           "config": {

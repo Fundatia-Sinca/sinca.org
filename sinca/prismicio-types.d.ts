@@ -241,6 +241,17 @@ interface SettingsDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   siteTitle: prismic.TitleField;
+
+  /**
+   * logo field in *Settings*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
 }
 
 /**
@@ -456,6 +467,16 @@ export interface HeroSliceHero2Primary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   link: prismic.LinkField;
+
+  /**
+   * Link Text field in *Hero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.linkText
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  linkText: prismic.KeyTextField;
 
   /**
    * Image field in *Hero → Primary*

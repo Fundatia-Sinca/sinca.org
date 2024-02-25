@@ -130,6 +130,11 @@
 						}
 					}
 				]
+			},
+			"linkText": {
+				"__TYPE__": "FieldContent",
+				"value": "sets",
+				"type": "Text"
 			}
 		},
 		"items": [
