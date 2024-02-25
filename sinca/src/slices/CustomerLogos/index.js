@@ -33,6 +33,7 @@ const CustomerLogos = ({ slice }) => {
                         field={item.image}
                         height={26}
                         width={160}
+                        fallbackAlt=''
                         className="es-customer-logos__logo__link__image"
                       />
                     </PrismicNextLink>

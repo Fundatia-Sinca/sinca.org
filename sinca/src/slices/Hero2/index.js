@@ -32,6 +32,7 @@ const Hero2 = ({ slice }) => {
             <PrismicNextImage
               field={slice.primary.image}
               className="es-fullpage-hero__image"
+              fallbackAlt=''
             />
           )}
         </div>

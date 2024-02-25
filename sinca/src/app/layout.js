@@ -20,7 +20,7 @@ const inter = Inter({
 export default async function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="overflow-x-hidden antialiased">
+      <body className="overflow-x-hidden antialiased bg-brand-light">
         {/* @ts-expect-error Async Server Component */}
         <Header />
         {children}
@@ -47,10 +47,10 @@ async function Header() {
         </PrismicNextLink>
         <nav>
           <ul className="flex flex-wrap gap-6 md:gap-10">
-            {navigation.data?.links.map((item) => (
+            {navigation.data?.links.slice(0, -2).map((item) => (
               <li
                 key={prismic.asText(item.label)}
-                className="font-semibold tracking-tight text-slate-800"
+                className="font-medium text-slate-700 hover:text-slate-800"
               >
                 <PrismicNextLink field={item.link}>
                   <PrismicText field={item.label} />
@@ -59,6 +59,19 @@ async function Header() {
             ))}
           </ul>
         </nav>
+        <ul className="flex flex-wrap gap-6 md:gap-10 ml-auto">
+        {navigation.data?.links.slice(-2).map((item) => (
+              <li
+                key={prismic.asText(item.label)}
+                className="font-medium"
+              >
+                <PrismicNextLink 
+                  className={prismic.asText(item.label)== 'Doneaza' ? 'py-3 px-5 bg-brand-dark text-white hover:bg-brand-darker' : 'text-slate-700 hover:text-slate-800'} field={item.link}>
+                  <PrismicText field={item.label}/>
+                </PrismicNextLink>
+              </li>
+            ))}
+        </ul>
       </div>
     </Bounded>
   );

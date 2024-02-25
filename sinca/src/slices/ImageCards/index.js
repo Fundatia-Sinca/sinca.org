@@ -22,7 +22,7 @@ const ImageCard = ({ item }) => {
               </PrismicNextLink>
             )}
           >
-            <PrismicNextImage field={image} sizes="100vw" className="w-full" />
+            <PrismicNextImage field={image} sizes="100vw" className="w-full" fallbackAlt=''/>
           </ConditionalWrap>
         </div>
       )}

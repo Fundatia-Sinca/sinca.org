@@ -18,11 +18,11 @@ const Hero = ({ slice }) => {
   const backgroundImage = slice.primary.backgroundImage;
 
   return (
-    <section className="relative bg-slate-900 text-white">
+    <section className="relative bg-slate-900 text-white flex">
       {prismic.isFilled.image(backgroundImage) && (
         <PrismicNextImage
           field={backgroundImage}
-          alt=""
+          fallbackAlt=''
           fill={true}
           className="pointer-events-none select-none object-cover opacity-40"
         />
