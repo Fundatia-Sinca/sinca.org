@@ -60,7 +60,7 @@
             "label": "Text",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,heading1,strong,em"
+            "multi": "paragraph,heading1,strong,em,list-item"
           }
         },
         "buttonLink": {
