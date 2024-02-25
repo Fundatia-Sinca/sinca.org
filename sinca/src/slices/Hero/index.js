@@ -32,7 +32,7 @@ const Hero = ({ slice }) => {
         />
       )}
       <Bounded yPadding="none" className="relative">
-        <div className="grid justify-items-center gap-8">
+        <div className={slice.variation == 'hero2' ? "max-w-xl pr-4 grid justify-items-center gap-8" : "grid justify-items-center gap-8"}>
           <div className="text-semibold text-lg">
             <PrismicRichText
               field={slice.primary.text}
