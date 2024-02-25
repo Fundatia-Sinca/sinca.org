@@ -8,7 +8,7 @@ import { PrismicRichText } from "@/components/PrismicRichText";
 /** @type {import("@prismicio/react").PrismicRichTextProps['components']} */
 const components = {
   heading1: ({ children }) => (
-    <Heading as="h2" size="xl" className="mb-4 mt-12 first:mt-0 last:mb-0">
+    <Heading as="h2" size="lg" className="mb-4 mt-12 first:mt-0 last:mb-0">
       {children}
     </Heading>
   ),
@@ -16,9 +16,13 @@ const components = {
 
 const Hero = ({ slice }) => {
   const backgroundImage = slice.primary.backgroundImage;
+  const mainImage = slice.primary.image;
 
   return (
-    <section className="relative bg-slate-900 text-white flex">
+    <section className={slice.variation == 'hero2' ? 'relative bg-brand text-slate-700 text-left flex mx-auto w-full max-w-7xl pt-6 lg:pt-20' : 'relative bg-slate-900 text-white'}
+      data-slice-type={slice.slice_type}
+      data-slice-variation={slice.variation}
+    >
       {prismic.isFilled.image(backgroundImage) && (
         <PrismicNextImage
           field={backgroundImage}
@@ -27,24 +31,58 @@ const Hero = ({ slice }) => {
           className="pointer-events-none select-none object-cover opacity-40"
         />
       )}
-      <Bounded yPadding="lg" className="relative">
+      <Bounded yPadding="none" className="relative">
         <div className="grid justify-items-center gap-8">
-          <div className="max-w-2xl text-center">
+          <div className="text-semibold text-lg">
             <PrismicRichText
               field={slice.primary.text}
               components={components}
             />
           </div>
-          {prismic.isFilled.link(slice.primary.buttonLink) && (
+
+          {slice.variation == 'hero2' && 
+            (
+              <div className="flex flex-row w-full gap-4">
+                {prismic.isFilled.link(slice.primary.buttonLink) && (
+                  <PrismicNextLink
+                    field={slice.primary.buttonLink}
+                    className="py-3 px-5 bg-brand-dark text-white text-xl hover:bg-brand-darker inline-block"
+                  >
+                    {slice.primary.buttonText || "Proiecte"}
+                  </PrismicNextLink>
+                )}
+                 {prismic.isFilled.link(slice.primary.link) && (
+                  <PrismicNextLink
+                    field={slice.primary.link}
+                    className="py-3 px-5 border border-brand-dark text-brand-dark text-xl hover:bg-brand-darker hover:text-white inline-block"
+                  >
+                    {slice.primary.linkText || 'Doneaza'}
+                  </PrismicNextLink>
+                )}
+              </div>
+            )
+          }
+          {prismic.isFilled.link(slice.primary.buttonLink) && slice.variation == 'default' && (
             <PrismicNextLink
               field={slice.primary.buttonLink}
-              className="rounded bg-white px-5 py-3 font-medium text-slate-800"
+              className="py-3 px-5 bg-brand-dark text-white hover:bg-brand-darker inline-block"
             >
               {slice.primary.buttonText || "Learn More"}
             </PrismicNextLink>
           )}
+          
         </div>
       </Bounded>
+      <div className="max-w-lg">
+        {prismic.isFilled.image(mainImage) && (
+          <PrismicNextImage
+            field={mainImage}
+            fallbackAlt=''
+            fill={false}
+            className=""
+          />
+        )}
+      </div>
     </section>
   );
 };
