@@ -228,6 +228,61 @@ export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
 /**
+ * Item in *Settings → Socials*
+ */
+export interface SettingsDocumentDataSocialsItem {
+  /**
+   * facebook field in *Settings → Socials*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.socials[].facebook
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  facebook: prismic.LinkField;
+
+  /**
+   * instagram field in *Settings → Socials*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.socials[].instagram
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  instagram: prismic.LinkField;
+
+  /**
+   * youtube field in *Settings → Socials*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.socials[].youtube
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  youtube: prismic.LinkField;
+
+  /**
+   * twitter field in *Settings → Socials*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.socials[].twitter
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  twitter: prismic.LinkField;
+
+  /**
+   * tiktok field in *Settings → Socials*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.socials[].tiktok
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  tiktok: prismic.LinkField;
+}
+
+/**
  * Content for Settings documents
  */
 interface SettingsDocumentData {
@@ -252,6 +307,17 @@ interface SettingsDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   logo: prismic.ImageField<never>;
+
+  /**
+   * Socials field in *Settings*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.socials[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  socials: prismic.GroupField<Simplify<SettingsDocumentDataSocialsItem>>;
 }
 
 /**
@@ -1135,6 +1201,7 @@ declare module "@prismicio/client" {
       PageDocumentDataSlicesSlice,
       SettingsDocument,
       SettingsDocumentData,
+      SettingsDocumentDataSocialsItem,
       AllDocumentTypes,
       CustomerLogosSlice,
       CustomerLogosSliceDefaultPrimary,
