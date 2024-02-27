@@ -7,6 +7,7 @@ import * as prismic from "@prismicio/client";
 
 import { createClient, repositoryName } from "@/prismicio";
 import { Bounded } from "@/components/Bounded";
+import { Navigation } from "@/components/Navigation";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -46,40 +47,15 @@ async function Header() {
           {prismic.isFilled.image(settings.data.logo) && (
             <PrismicNextImage
               field={settings.data.logo}
-              fallbackAlt='Fundatia Sinca Logo'
+              alt='Fundatia Sinca Logo'
               fill={false}
               className="w-16 h-16"
             />
         )}
           <PrismicText field={settings.data.siteTitle} />
         </PrismicNextLink>
-        <nav>
-          <ul className="flex flex-wrap gap-6 md:gap-10">
-            {navigation.data?.links.slice(0, -2).map((item) => (
-              <li
-                key={prismic.asText(item.label)}
-                className="font-medium text-slate-700 hover:text-slate-800"
-              >
-                <PrismicNextLink field={item.link}>
-                  <PrismicText field={item.label} />
-                </PrismicNextLink>
-              </li>
-            ))}
-          </ul>
-        </nav>
-        <ul className="flex flex-wrap gap-6 md:gap-10 ml-auto">
-        {navigation.data?.links.slice(-2).map((item) => (
-              <li
-                key={prismic.asText(item.label)}
-                className="font-medium"
-              >
-                <PrismicNextLink 
-                  className={prismic.asText(item.label)== 'Doneaza' ? 'py-3 px-5 bg-brand-dark text-white hover:bg-brand-darker' : 'text-slate-700 hover:text-slate-800'} field={item.link}>
-                  <PrismicText field={item.label}/>
-                </PrismicNextLink>
-              </li>
-            ))}
-        </ul>
+      
+        <Navigation navigation={navigation} />
       </div>
     </Bounded>
   );
