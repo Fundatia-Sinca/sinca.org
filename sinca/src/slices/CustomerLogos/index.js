@@ -14,27 +14,27 @@ const CustomerLogos = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="es-bounded es-customer-logos"
+      className="py-20 bg-brand-superlight"
     >
-      <div className="es-bounded__content es-customer-logos__content">
+      <div>
         {isFilled.richText(slice.primary.eyebrowHeadline) && (
-          <div className="es-customer-logos__heading">
+          <div className="text-brand-darklight text-center text-lg uppercase tracking-wider font-semibold">
             <PrismicRichText field={slice.primary.eyebrowHeadline} />
           </div>
         )}
         {slice.items.length > 0 && (
-          <ul className="es-customer-logos__logos">
+          <ul className="pt-8 flex flex-col md:flex-wrap md:flex-row justify-center items-center gap-6 lg:gap-12">
             {slice.items.map(
               (item) =>
                 isFilled.image(item.image) && (
-                  <li key={item.image.url} className="es-customer-logos__logo">
+                  <li key={item.image.url}>
                     <PrismicNextLink field={item.link}>
                       <PrismicNextImage
                         field={item.image}
                         height={26}
                         width={160}
                         fallbackAlt=''
-                        className="es-customer-logos__logo__link__image"
+                        className="m-auto"
                       />
                     </PrismicNextLink>
                   </li>
@@ -44,89 +44,11 @@ const CustomerLogos = ({ slice }) => {
         )}
         <PrismicNextLink
           field={slice.primary.callToActionLink}
-          className="es-customer-logos__button"
+          className=""
         >
-          {slice.primary.callToActionLabel || "Learn more..."}
+          {slice.primary.callToActionLabel}
         </PrismicNextLink>
       </div>
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-            .es-bounded {
-              margin: 0px;
-              min-width: 0px;
-              position: relative;
-              padding: 8vw 1.25rem;
-            }
-
-            .es-bounded__content {
-              min-width: 0px;
-              max-width: 90%;
-              margin: 0px auto;
-            }
-
-            .es-customer-logos {
-              font-family: system-ui, sans-serif;
-              background-color: #f4f0ec;
-              color: #333;
-            }
-
-            .es-customer-logos__content {
-              display: grid;
-              gap: 2rem;
-              justify-items: center;
-            }
-
-            .es-customer-logos__heading {
-              color: #8592e0;
-              font-size: 1.5rem;
-              font-weight: 500;
-              text-align: center;
-            }
-
-            .es-customer-logos__heading * {
-            	margin: 0;
-            }
-
-            .es-customer-logos__logos {
-              display: grid;
-              grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-              grid-column-gap: 1.25rem;
-              grid-row-gap: 2rem;
-              align-items: center;
-              list-style-type: none;
-              width: 100%;
-            }
-
-            @media (min-width: 1200px) {
-              .es-customer-logos__logos {
-            		margin-left: -3rem;
-              }
-            }
-
-            .es-customer-logos__logo {
-              margin: 0;
-              display: flex;
-              justify-content: center;
-            }
-
-            @media (min-width: 1200px) {
-              .es-customer-logos__logo {
-            		margin-left: 3rem;
-              }
-            }
-
-            .es-customer-logos__logo__link__image {
-              max-width: 10rem;
-            }
-
-            .es-customer-logos__button {
-              justify-self: center;
-              text-decoration: underline;
-            }
-          `,
-        }}
-      />
     </section>
   );
 };
