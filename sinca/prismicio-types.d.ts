@@ -1059,6 +1059,27 @@ export interface TextWithImageSliceWithButtonPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * Eyebrow field in *TextWithImage → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_with_image.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  eyebrow: prismic.RichTextField;
+
+  /**
+   * Reverse field in *TextWithImage → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: text_with_image.primary.reverse
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  reverse: prismic.BooleanField;
 }
 
 /**
