@@ -19,7 +19,7 @@ const Hero = ({ slice }) => {
   const mainImage = slice.primary.image;
 
   return (
-    <section className={slice.variation == 'hero2' ? 'relative bg-brand text-slate-700 text-left flex m-auto xl:pl-10 w-full max-w-7xl pt-6 lg:pt-20' : 'relative bg-slate-900 text-white'}
+    <section className={slice.variation == 'hero2' ? 'relative bg-brand text-slate-700 text-left flex flex-col md:flex-row m-auto xl:pl-10 w-full max-w-7xl pt-6 lg:pt-20' : 'relative bg-slate-900 text-white'}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
@@ -92,13 +92,13 @@ const Hero = ({ slice }) => {
           )}
         </div>
       </Bounded>
-      <div className="max-w-xl">
+      <div className="md:max-w-sm xl:max-w-xl">
         {prismic.isFilled.image(mainImage) && (
           <PrismicNextImage
             field={mainImage}
             fallbackAlt=''
             fill={false}
-            className="h-full object-cover"
+            className="w-full lg:h-full lg:object-cover"
           />
         )}
       </div>
