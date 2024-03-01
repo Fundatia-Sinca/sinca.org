@@ -227,6 +227,116 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
+type ProiectDocumentDataSlicesSlice = QuoteSlice | TextWithImageSlice;
+
+/**
+ * Content for Proiect documents
+ */
+interface ProiectDocumentData {
+  /**
+   * Slice Zone field in *Proiect*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proiect.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<ProiectDocumentDataSlicesSlice> /**
+   * Meta Description field in *Proiect*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: proiect.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Proiect*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proiect.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Proiect*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: proiect.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Proiect document from Prismic
+ *
+ * - **API ID**: `proiect`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ProiectDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ProiectDocumentData>,
+    "proiect",
+    Lang
+  >;
+
+type ProiecteDocumentDataSlicesSlice = TextWithImageSlice;
+
+/**
+ * Content for Proiecte documents
+ */
+interface ProiecteDocumentData {
+  /**
+   * proiect field in *Proiecte*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proiecte.proiect
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  proiect: prismic.ContentRelationshipField<"proiect">;
+
+  /**
+   * Slice Zone field in *Proiecte*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proiecte.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<ProiecteDocumentDataSlicesSlice>;
+}
+
+/**
+ * Proiecte document from Prismic
+ *
+ * - **API ID**: `proiecte`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ProiecteDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<ProiecteDocumentData>,
+    "proiecte",
+    Lang
+  >;
+
 /**
  * Item in *Settings → Socials*
  */
@@ -340,6 +450,8 @@ export type AllDocumentTypes =
   | ContactDocument
   | NavigationDocument
   | PageDocument
+  | ProiectDocument
+  | ProiecteDocument
   | SettingsDocument;
 
 /**
@@ -1199,6 +1311,12 @@ declare module "@prismicio/client" {
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
+      ProiectDocument,
+      ProiectDocumentData,
+      ProiectDocumentDataSlicesSlice,
+      ProiecteDocument,
+      ProiecteDocumentData,
+      ProiecteDocumentDataSlicesSlice,
       SettingsDocument,
       SettingsDocumentData,
       SettingsDocumentDataSocialsItem,

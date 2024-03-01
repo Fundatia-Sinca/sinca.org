@@ -31,6 +31,10 @@ const routes = [
     type: "navigation",
     path: "/",
   },
+  {
+    type: "proiect",
+    path: "/proiect/:uid",
+  },
 ];
 
 /**
