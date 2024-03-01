@@ -60,7 +60,7 @@ const ProiecteNoi = async ({ slice }) => {
   return (
     <>
       {proiecte.slice(0, 3).map((proiect, index) => (
-        <TextWithImage proiect={proiect} reverse={index == 1} />
+        <TextWithImage proiect={proiect} key={proiect.uid} reverse={index == 1} />
       ))}
     </>
   );
