@@ -1,0 +1,14 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"uid": {
+				"__TYPE__": "FieldContent",
+				"value": "company",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

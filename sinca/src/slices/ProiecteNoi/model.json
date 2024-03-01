@@ -1,0 +1,26 @@
+{
+  "id": "proiecte_noi",
+  "type": "SharedSlice",
+  "name": "ProiecteNoi",
+  "description": "ProiecteNoi",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "uid": {
+          "type": "Text",
+          "config": {
+            "label": "uid",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -138,6 +138,7 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | ProiecteNoiSlice
   | CustomerLogosSlice
   | HeroSlice
   | QuoteSlice
@@ -233,6 +234,50 @@ type ProiectDocumentDataSlicesSlice = QuoteSlice | TextWithImageSlice;
  * Content for Proiect documents
  */
 interface ProiectDocumentData {
+  /**
+   * title field in *Proiect*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proiect.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * description field in *Proiect*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proiect.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * image field in *Proiect*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proiect.image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * eyebrow field in *Proiect*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proiect.eyebrow
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  eyebrow: prismic.RichTextField;
+
   /**
    * Slice Zone field in *Proiect*
    *
@@ -1035,6 +1080,51 @@ export type ImageCardsSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *ProiecteNoi → Primary*
+ */
+export interface ProiecteNoiSliceDefaultPrimary {
+  /**
+   * uid field in *ProiecteNoi → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proiecte_noi.primary.uid
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  uid: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for ProiecteNoi Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProiecteNoiSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ProiecteNoiSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ProiecteNoi*
+ */
+type ProiecteNoiSliceVariation = ProiecteNoiSliceDefault;
+
+/**
+ * ProiecteNoi Shared Slice
+ *
+ * - **API ID**: `proiecte_noi`
+ * - **Description**: ProiecteNoi
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProiecteNoiSlice = prismic.SharedSlice<
+  "proiecte_noi",
+  ProiecteNoiSliceVariation
+>;
+
+/**
  * Primary content in *Quote → Primary*
  */
 export interface QuoteSliceDefaultPrimary {
@@ -1349,6 +1439,10 @@ declare module "@prismicio/client" {
       ImageCardsSliceDefaultItem,
       ImageCardsSliceVariation,
       ImageCardsSliceDefault,
+      ProiecteNoiSlice,
+      ProiecteNoiSliceDefaultPrimary,
+      ProiecteNoiSliceVariation,
+      ProiecteNoiSliceDefault,
       QuoteSlice,
       QuoteSliceDefaultPrimary,
       QuoteSliceVariation,
