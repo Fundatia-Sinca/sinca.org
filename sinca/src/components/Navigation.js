@@ -51,6 +51,7 @@ export function Navigation({ navigation }) {
             <ul className="flex flex-col w-full">
                 {navigation.data?.links.map((item) => (
                 <li
+                    onClick={handleMenuClick}
                     key={prismic.asText(item.label)}
                     className="font-medium py-4 border-b border-border-brand last:border-none last:pb-0 text-slate-700 hover:text-slate-800"
                 >

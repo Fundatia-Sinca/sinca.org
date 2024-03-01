@@ -6,7 +6,6 @@ import { PrismicRichText } from "@/components/PrismicRichText";
 
 const TextWithImage = ({ slice }) => {
   const image = slice.primary.image;
-  console.log(slice.primary.reverse)
   return (
     <Bounded as="section" className="bg-brand-superlight">
       <div className={clsx("flex flex-col-reverse relative", slice.primary.reverse ? 'lg:flex-row-reverse' : 'lg:flex-row')}>
