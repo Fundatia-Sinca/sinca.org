@@ -23,7 +23,7 @@ const TextTwoCol = ({ slice }) => {
               <PrismicRichText field={slice.primary.title}/>
             </div>
         </div>
-        <div className="flex flex-col lg:flex-row mt-4 lg:mt-8 text-lg text-slate-700">
+        <div className="flex flex-col lg:flex-row mt-4 lg:mt-8 text-lg text-slate-700 px-6 md:px-0">
           {prismic.isFilled.richText(slice.primary.first_column) && 
             <div className="py-4 md:py-8 md:pr-8 lg:pr-14 md:w-1/2">
               <PrismicRichText field={slice.primary.first_column}/>
