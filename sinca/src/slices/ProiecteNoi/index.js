@@ -61,7 +61,7 @@ const ProiecteNoi = async ({ slice }) => {
   return (
     <>
       {proiecte.map((proiect, index) => (
-        <TextWithImage proiect={proiect} key={proiect.uid} reverse={index == 1} />
+        <TextWithImage proiect={proiect} key={proiect.uid} reverse={index % 2 === 1} />
       ))}
     </>
   );
