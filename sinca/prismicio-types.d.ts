@@ -138,6 +138,8 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | ImageWithStatsSlice
+  | HeroSlice
   | GallerySlice
   | TextTwoColSlice
   | ProiecteNoiSlice
@@ -1082,6 +1084,66 @@ export type ImageCardsSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *ImageWithStats → Primary*
+ */
+export interface ImageWithStatsSliceDefaultPrimary {
+  /**
+   * image field in *ImageWithStats → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_with_stats.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *ImageWithStats → Items*
+ */
+export interface ImageWithStatsSliceDefaultItem {
+  /**
+   * stats field in *ImageWithStats → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_with_stats.items[].stats
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  stats: prismic.RichTextField;
+}
+
+/**
+ * Default variation for ImageWithStats Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageWithStatsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ImageWithStatsSliceDefaultPrimary>,
+  Simplify<ImageWithStatsSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *ImageWithStats*
+ */
+type ImageWithStatsSliceVariation = ImageWithStatsSliceDefault;
+
+/**
+ * ImageWithStats Shared Slice
+ *
+ * - **API ID**: `image_with_stats`
+ * - **Description**: ImageWithStats
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageWithStatsSlice = prismic.SharedSlice<
+  "image_with_stats",
+  ImageWithStatsSliceVariation
+>;
+
+/**
  * Primary content in *ProiecteNoi → Primary*
  */
 export interface ProiecteNoiSliceDefaultPrimary {
@@ -1301,6 +1363,18 @@ export interface TextTwoColSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   second_column: prismic.RichTextField;
+
+  /**
+   * Background field in *TextTwoCol → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_two_col.primary.background
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background: prismic.SelectField<
+    "brand" | "brand-light" | "brand-lighter" | "brand-superlight"
+  >;
 }
 
 /**
@@ -1527,6 +1601,11 @@ declare module "@prismicio/client" {
       ImageCardsSliceDefaultItem,
       ImageCardsSliceVariation,
       ImageCardsSliceDefault,
+      ImageWithStatsSlice,
+      ImageWithStatsSliceDefaultPrimary,
+      ImageWithStatsSliceDefaultItem,
+      ImageWithStatsSliceVariation,
+      ImageWithStatsSliceDefault,
       ProiecteNoiSlice,
       ProiecteNoiSliceDefaultPrimary,
       ProiecteNoiSliceVariation,

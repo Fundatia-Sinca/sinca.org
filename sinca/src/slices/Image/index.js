@@ -10,7 +10,7 @@ const Image = ({ slice, index }) => {
   return (
     <Bounded
       as="section"
-      className={clsx("bg-white", index === 0 && "pt-0 md:pt-0")}
+      className={clsx("bg-brand", index === 0 && "pt-0 md:pt-0")}
     >
       {prismic.isFilled.image(image) && (
         <div className="bg-gray-100">

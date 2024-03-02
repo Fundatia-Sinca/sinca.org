@@ -5,7 +5,7 @@ import { PrismicRichText } from "@/components/PrismicRichText";
 
 const Text = ({ slice }) => {
   return (
-    <Bounded as="section" className="bg-white leading-relaxed">
+    <Bounded as="section" className="bg-brand-light leading-relaxed">
       <div
         className={clsx(
           slice.variation === "twoColumns" && "md:columns-2 md:gap-6",

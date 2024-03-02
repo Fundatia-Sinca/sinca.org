@@ -1,5 +1,6 @@
 import { PrismicRichText } from "@/components/PrismicRichText";
 import * as prismic from "@prismicio/client";
+import clsx from "clsx";
 /**
  * @typedef {import("@prismicio/client").Content.TextTwoColSlice} TextTwoColSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<TextTwoColSlice>} TextTwoColProps
@@ -10,7 +11,7 @@ const TextTwoCol = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="px-4 py-20 bg-brand-superlight"
+      className={clsx("px-4 py-20", slice.primary.background ? slice.primary.background : "bg-brand-superlight")}
     >
       <div className="max-w-screen-xl m-auto">
         <div className="flex flex-col justify-center">

@@ -40,6 +40,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "ruler",
 				"type": "Text"
+			},
+			"background": {
+				"__TYPE__": "FieldContent",
+				"value": "brand-lighter",
+				"type": "Select"
 			}
 		},
 		"items": []
