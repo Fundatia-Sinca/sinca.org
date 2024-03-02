@@ -35,6 +35,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "echipa": {
+              "type": "SharedSlice"
+            },
             "six_boxes": {
               "type": "SharedSlice"
             },
