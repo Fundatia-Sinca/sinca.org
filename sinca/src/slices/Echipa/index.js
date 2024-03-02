@@ -39,7 +39,7 @@ const Echipa = async ({ slice }) => {
         </div>
         <div className="pt-12 md:grid grid-cols-3 gap-8">
             {persoane.map((item) => (
-              <div className="pb-10 last:pb-0">
+              <div className="pb-10 last:pb-0" key={item.id}>
                 <PrismicNextImage className="max-w-96 max-h-96 object-cover" field={item.data.image} />
                 <div className="font-bold pt-6 pb-2 text-xl text-slate-800">{item.data.nume}</div>
                 <div className="text-lg text-slate-600">{item.data.pozitie}</div>
