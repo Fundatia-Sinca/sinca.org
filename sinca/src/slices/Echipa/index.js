@@ -17,7 +17,7 @@ const Echipa = async ({ slice }) => {
       data-slice-variation={slice.variation}
       className="relative bg-brand-superlight"
     >
-      <div className="bg-brand absolute h-full max-h-[40rem] lg:max-h-[30rem] top-0 w-full"></div>
+      <div className="bg-brand absolute h-full max-h-[40rem] top-0 w-full"></div>
       <div className="max-w-screen-xl m-auto px-8 py-14 md:py-32 relative">
         <div className="md:grid grid-cols-2 gap-8 lg:pb-14">
           <div>
