@@ -230,6 +230,60 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
+/**
+ * Content for Persoana documents
+ */
+interface PersoanaDocumentData {
+  /**
+   * Nume field in *Persoana*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: persoana.nume
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  nume: prismic.KeyTextField;
+
+  /**
+   * Pozitie field in *Persoana*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: persoana.pozitie
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  pozitie: prismic.KeyTextField;
+
+  /**
+   * Image field in *Persoana*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: persoana.image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Persoana document from Prismic
+ *
+ * - **API ID**: `persoana`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PersoanaDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<PersoanaDocumentData>,
+    "persoana",
+    Lang
+  >;
+
 type ProiectDocumentDataSlicesSlice =
   | TextTwoColSlice
   | GallerySlice
@@ -456,6 +510,7 @@ export type AllDocumentTypes =
   | ContactDocument
   | NavigationDocument
   | PageDocument
+  | PersoanaDocument
   | ProiectDocument
   | SettingsDocument;
 
@@ -548,6 +603,83 @@ export type CustomerLogosSlice = prismic.SharedSlice<
   "customer_logos",
   CustomerLogosSliceVariation
 >;
+
+/**
+ * Primary content in *Echipa → Primary*
+ */
+export interface EchipaSliceDefaultPrimary {
+  /**
+   * Eyebrow field in *Echipa → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: echipa.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Title field in *Echipa → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: echipa.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Text field in *Echipa → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: echipa.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Echipa → Items*
+ */
+export interface EchipaSliceDefaultItem {
+  /**
+   * persoane field in *Echipa → Items*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: echipa.items[].persoane
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  persoane: prismic.ContentRelationshipField<"persoana">;
+}
+
+/**
+ * Default variation for Echipa Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EchipaSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<EchipaSliceDefaultPrimary>,
+  Simplify<EchipaSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Echipa*
+ */
+type EchipaSliceVariation = EchipaSliceDefault;
+
+/**
+ * Echipa Shared Slice
+ *
+ * - **API ID**: `echipa`
+ * - **Description**: Echipa
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EchipaSlice = prismic.SharedSlice<"echipa", EchipaSliceVariation>;
 
 /**
  * Primary content in *Gallery → Items*
@@ -1668,6 +1800,8 @@ declare module "@prismicio/client" {
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
+      PersoanaDocument,
+      PersoanaDocumentData,
       ProiectDocument,
       ProiectDocumentData,
       ProiectDocumentDataSlicesSlice,
@@ -1680,6 +1814,11 @@ declare module "@prismicio/client" {
       CustomerLogosSliceDefaultItem,
       CustomerLogosSliceVariation,
       CustomerLogosSliceDefault,
+      EchipaSlice,
+      EchipaSliceDefaultPrimary,
+      EchipaSliceDefaultItem,
+      EchipaSliceVariation,
+      EchipaSliceDefault,
       GallerySlice,
       GallerySliceDefaultItem,
       GallerySliceVariation,
