@@ -35,25 +35,22 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "gallery": {
+              "type": "SharedSlice"
+            },
+            "text_two_col": {
+              "type": "SharedSlice"
+            },
             "proiecte_noi": {
               "type": "SharedSlice"
             },
             "customer_logos": {
               "type": "SharedSlice"
             },
-            "hero": {
-              "type": "SharedSlice"
-            },
             "quote": {
               "type": "SharedSlice"
             },
             "text": {
-              "type": "SharedSlice"
-            },
-            "image": {
-              "type": "SharedSlice"
-            },
-            "image_cards": {
               "type": "SharedSlice"
             },
             "text_with_image": {

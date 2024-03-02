@@ -18,6 +18,13 @@
             "label": "uid",
             "placeholder": ""
           }
+        },
+        "maximum": {
+          "type": "Number",
+          "config": {
+            "label": "Maximum",
+            "placeholder": ""
+          }
         }
       },
       "items": {}

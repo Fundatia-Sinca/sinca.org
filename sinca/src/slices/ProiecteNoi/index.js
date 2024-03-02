@@ -47,16 +47,20 @@ const TextWithImage = ({proiect, reverse = false}) => {
 }
 const ProiecteNoi = async ({ slice }) => {
   const client = createClient();
-  const proiecte = await client.getAllByType("proiect", {
+  let proiecte = await client.getAllByType("proiect", {
     orderings: [
       { field: "my.proiect.publication_date", direction: "desc" },
       { field: "document.first_publication_date", direction: "desc" },
     ],
   });
 
+  if (proiecte.length > slice.primary.maximum) {
+    proiecte = proiecte.slice(0, slice.primary.maximum);
+  }
+
   return (
     <>
-      {proiecte.slice(0, 3).map((proiect, index) => (
+      {proiecte.map((proiect, index) => (
         <TextWithImage proiect={proiect} key={proiect.uid} reverse={index == 1} />
       ))}
     </>

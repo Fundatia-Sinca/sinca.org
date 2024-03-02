@@ -138,13 +138,12 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | GallerySlice
+  | TextTwoColSlice
   | ProiecteNoiSlice
   | CustomerLogosSlice
-  | HeroSlice
   | QuoteSlice
   | TextSlice
-  | ImageSlice
-  | ImageCardsSlice
   | TextWithImageSlice;
 
 /**
@@ -1095,6 +1094,16 @@ export interface ProiecteNoiSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   uid: prismic.KeyTextField;
+
+  /**
+   * Maximum field in *ProiecteNoi → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proiecte_noi.primary.maximum
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  maximum: prismic.NumberField;
 }
 
 /**
