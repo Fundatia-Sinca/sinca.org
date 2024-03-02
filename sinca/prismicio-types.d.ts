@@ -138,6 +138,7 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | SixBoxesSlice
   | ImageWithStatsSlice
   | HeroSlice
   | GallerySlice
@@ -1251,6 +1252,111 @@ type QuoteSliceVariation = QuoteSliceDefault;
 export type QuoteSlice = prismic.SharedSlice<"quote", QuoteSliceVariation>;
 
 /**
+ * Primary content in *SixBoxes → Primary*
+ */
+export interface SixBoxesSliceDefaultPrimary {
+  /**
+   * Title field in *SixBoxes → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: six_boxes.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * first field in *SixBoxes → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: six_boxes.primary.first
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  first: prismic.RichTextField;
+
+  /**
+   * second field in *SixBoxes → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: six_boxes.primary.second
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  second: prismic.RichTextField;
+
+  /**
+   * third field in *SixBoxes → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: six_boxes.primary.third
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  third: prismic.RichTextField;
+
+  /**
+   * fourth field in *SixBoxes → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: six_boxes.primary.fourth
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  fourth: prismic.RichTextField;
+
+  /**
+   * fifth field in *SixBoxes → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: six_boxes.primary.fifth
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  fifth: prismic.RichTextField;
+
+  /**
+   * sixth field in *SixBoxes → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: six_boxes.primary.sixth
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  sixth: prismic.RichTextField;
+}
+
+/**
+ * Default variation for SixBoxes Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SixBoxesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SixBoxesSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *SixBoxes*
+ */
+type SixBoxesSliceVariation = SixBoxesSliceDefault;
+
+/**
+ * SixBoxes Shared Slice
+ *
+ * - **API ID**: `six_boxes`
+ * - **Description**: SixBoxes
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SixBoxesSlice = prismic.SharedSlice<
+  "six_boxes",
+  SixBoxesSliceVariation
+>;
+
+/**
  * Primary content in *Text → Primary*
  */
 export interface TextSliceDefaultPrimary {
@@ -1614,6 +1720,10 @@ declare module "@prismicio/client" {
       QuoteSliceDefaultPrimary,
       QuoteSliceVariation,
       QuoteSliceDefault,
+      SixBoxesSlice,
+      SixBoxesSliceDefaultPrimary,
+      SixBoxesSliceVariation,
+      SixBoxesSliceDefault,
       TextSlice,
       TextSliceDefaultPrimary,
       TextSliceTwoColumnsPrimary,

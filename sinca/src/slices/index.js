@@ -12,6 +12,7 @@ export const components = {
   image_with_stats: dynamic(() => import("./ImageWithStats")),
   proiecte_noi: dynamic(() => import("./ProiecteNoi")),
   quote: dynamic(() => import("./Quote")),
+  six_boxes: dynamic(() => import("./SixBoxes")),
   text: dynamic(() => import("./Text")),
   text_two_col: dynamic(() => import("./TextTwoCol")),
   text_with_image: dynamic(() => import("./TextWithImage")),

@@ -1,0 +1,86 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Dinner"
+						}
+					}
+				]
+			},
+			"first": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Excepteur irure duis et amet incididunt culpa. Adipisicing duis eu id et in elit. Tempor anim eiusmod irure."
+						}
+					}
+				]
+			},
+			"second": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Adipisicing dolore aliquip sint dolor enim in sit esse nostrud aliquip velit exercitation elit deserunt est. Aliquip consectetur commodo ea. Lorem quis occaecat et voluptate ut occaecat laboris in incididunt ut ipsum cillum sit nostrud irure."
+						}
+					}
+				]
+			},
+			"third": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Non excepteur consectetur Lorem id officia laborum ut quis ea ad laborum. Aute irure tempor proident commodo dolor reprehenderit dolor exercitation ea eiusmod consectetur nulla."
+						}
+					}
+				]
+			},
+			"fourth": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Dolore do dolore magna. Sunt ut sunt eiusmod id."
+						}
+					}
+				]
+			},
+			"fifth": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Sunt culpa velit proident anim duis elit aute voluptate proident adipisicing fugiat ad non incididunt labore. Enim irure tempor mollit ipsum laborum eiusmod cillum incididunt cillum laboris sit."
+						}
+					}
+				]
+			},
+			"sixth": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Aliquip minim consequat minim enim labore fugiat. Id laboris veniam exercitation ad aliqua cillum. Magna culpa nulla consequat consequat incididunt occaecat Lorem cupidatat elit minim magna."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
