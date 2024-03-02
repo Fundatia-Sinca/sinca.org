@@ -12,5 +12,6 @@ export const components = {
   proiecte_noi: dynamic(() => import("./ProiecteNoi")),
   quote: dynamic(() => import("./Quote")),
   text: dynamic(() => import("./Text")),
+  text_two_col: dynamic(() => import("./TextTwoCol")),
   text_with_image: dynamic(() => import("./TextWithImage")),
 };

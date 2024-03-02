@@ -229,6 +229,7 @@ export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
 type ProiectDocumentDataSlicesSlice =
+  | TextTwoColSlice
   | GallerySlice
   | QuoteSlice
   | TextWithImageSlice;
@@ -1249,6 +1250,81 @@ type TextSliceVariation = TextSliceDefault | TextSliceTwoColumns;
 export type TextSlice = prismic.SharedSlice<"text", TextSliceVariation>;
 
 /**
+ * Primary content in *TextTwoCol → Primary*
+ */
+export interface TextTwoColSliceDefaultPrimary {
+  /**
+   * Title field in *TextTwoCol → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_two_col.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Eyebrow field in *TextTwoCol → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_two_col.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * First Column field in *TextTwoCol → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_two_col.primary.first_column
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  first_column: prismic.RichTextField;
+
+  /**
+   * Second Column field in *TextTwoCol → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_two_col.primary.second_column
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  second_column: prismic.RichTextField;
+}
+
+/**
+ * Default variation for TextTwoCol Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextTwoColSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TextTwoColSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TextTwoCol*
+ */
+type TextTwoColSliceVariation = TextTwoColSliceDefault;
+
+/**
+ * TextTwoCol Shared Slice
+ *
+ * - **API ID**: `text_two_col`
+ * - **Description**: TextTwoCol
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextTwoColSlice = prismic.SharedSlice<
+  "text_two_col",
+  TextTwoColSliceVariation
+>;
+
+/**
  * Primary content in *TextWithImage → Primary*
  */
 export interface TextWithImageSliceDefaultPrimary {
@@ -1456,6 +1532,10 @@ declare module "@prismicio/client" {
       TextSliceVariation,
       TextSliceDefault,
       TextSliceTwoColumns,
+      TextTwoColSlice,
+      TextTwoColSliceDefaultPrimary,
+      TextTwoColSliceVariation,
+      TextTwoColSliceDefault,
       TextWithImageSlice,
       TextWithImageSliceDefaultPrimary,
       TextWithImageSliceWithButtonPrimary,

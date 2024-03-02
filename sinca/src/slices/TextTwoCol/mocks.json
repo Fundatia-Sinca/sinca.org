@@ -1,0 +1,47 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"first_column": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Magna excepteur excepteur ipsum velit ullamco incididunt excepteur incididunt."
+						}
+					}
+				]
+			},
+			"second_column": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Irure dolor ut officia deserunt ut esse ea ipsum minim ut occaecat mollit."
+						}
+					}
+				]
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Commodo ullamco enim elit mollit deserunt officia sint occaecat ipsum proident ullamco cupidatat enim minim ut. Lorem ipsum et labore minim incididunt veniam consequat aute nisi dolore ullamco."
+						}
+					}
+				]
+			},
+			"eyebrow": {
+				"__TYPE__": "FieldContent",
+				"value": "ruler",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

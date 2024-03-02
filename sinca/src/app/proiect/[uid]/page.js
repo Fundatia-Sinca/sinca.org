@@ -54,7 +54,6 @@ export default async function Page({ params }) {
         <div className="text-center py-4 max-w-[56rem] m-auto text-slate-900">
           <PrismicRichText field={page.data.title}/>
         </div>
-
       </div>
       <SliceZone slices={page.data.slices} components={components} />
     </>

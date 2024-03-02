@@ -16,7 +16,7 @@ const Gallery = ({ slice }) => {
       <div aria-hidden="true" className="absolute top-0 w-full h-full flex flex-col">
         <div className="bg-brand flex-1 flex-shrink-1 flex-basis-0"></div>
         <div className="bg-brand flex-1 flex-shrink-1 flex-basis-0"></div>
-        <div className="bg-white flex-1 flex-shrink-1 flex-basis-0"></div>
+        <div className="bg-brand-superlight flex-1 flex-shrink-1 flex-basis-0"></div>
       </div>
       <div className="max-w-screen-xl m-auto relative px-4 py-12">
         <div className="grid gap-6 mt-8 grid-cols-12">
