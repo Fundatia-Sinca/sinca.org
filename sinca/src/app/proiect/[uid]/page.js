@@ -19,9 +19,9 @@ export async function generateMetadata({ params }) {
     .getByUID("proiect", params.uid)
     .catch(() => notFound());
   const settings = await client.getSingle("settings");
-
+  
   return {
-    title: `${asText(page.data.title)} | ${asText(settings.data.siteTitle)}`,
+    title: `${page.data.title}| ${asText(settings.data.siteTitle)}`,
     description: page.data.meta_description,
     openGraph: {
       title: page.data.meta_title,
@@ -37,7 +37,7 @@ export async function generateMetadata({ params }) {
 /**
  * @param {{ params: Params }}
  */
-export default async function Page({ params }) {
+export default async function Proiect({ params }) {
   const client = createClient();
   const page = await client
     .getByUID("page", params.uid)
