@@ -228,25 +228,28 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-type ProiectDocumentDataSlicesSlice = QuoteSlice | TextWithImageSlice;
+type ProiectDocumentDataSlicesSlice =
+  | GallerySlice
+  | QuoteSlice
+  | TextWithImageSlice;
 
 /**
  * Content for Proiect documents
  */
 interface ProiectDocumentData {
   /**
-   * title field in *Proiect*
+   * Title field in *Proiect*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Title
    * - **Placeholder**: *None*
    * - **API ID Path**: proiect.title
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  title: prismic.KeyTextField;
+  title: prismic.TitleField;
 
   /**
-   * description field in *Proiect*
+   * Description field in *Proiect*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -268,7 +271,7 @@ interface ProiectDocumentData {
   image: prismic.ImageField<never>;
 
   /**
-   * eyebrow field in *Proiect*
+   * Eyebrow field in *Proiect*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -334,51 +337,6 @@ export type ProiectDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<
     Simplify<ProiectDocumentData>,
     "proiect",
-    Lang
-  >;
-
-type ProiecteDocumentDataSlicesSlice = TextWithImageSlice;
-
-/**
- * Content for Proiecte documents
- */
-interface ProiecteDocumentData {
-  /**
-   * proiect field in *Proiecte*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: proiecte.proiect
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  proiect: prismic.ContentRelationshipField<"proiect">;
-
-  /**
-   * Slice Zone field in *Proiecte*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: proiecte.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  slices: prismic.SliceZone<ProiecteDocumentDataSlicesSlice>;
-}
-
-/**
- * Proiecte document from Prismic
- *
- * - **API ID**: `proiecte`
- * - **Repeatable**: `false`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type ProiecteDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
-    Simplify<ProiecteDocumentData>,
-    "proiecte",
     Lang
   >;
 
@@ -496,7 +454,6 @@ export type AllDocumentTypes =
   | NavigationDocument
   | PageDocument
   | ProiectDocument
-  | ProiecteDocument
   | SettingsDocument;
 
 /**
@@ -587,6 +544,51 @@ type CustomerLogosSliceVariation = CustomerLogosSliceDefault;
 export type CustomerLogosSlice = prismic.SharedSlice<
   "customer_logos",
   CustomerLogosSliceVariation
+>;
+
+/**
+ * Primary content in *Gallery → Items*
+ */
+export interface GallerySliceDefaultItem {
+  /**
+   * Image field in *Gallery → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Gallery Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type GallerySliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<GallerySliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Gallery*
+ */
+type GallerySliceVariation = GallerySliceDefault;
+
+/**
+ * Gallery Shared Slice
+ *
+ * - **API ID**: `gallery`
+ * - **Description**: Gallery
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type GallerySlice = prismic.SharedSlice<
+  "gallery",
+  GallerySliceVariation
 >;
 
 /**
@@ -1404,9 +1406,6 @@ declare module "@prismicio/client" {
       ProiectDocument,
       ProiectDocumentData,
       ProiectDocumentDataSlicesSlice,
-      ProiecteDocument,
-      ProiecteDocumentData,
-      ProiecteDocumentDataSlicesSlice,
       SettingsDocument,
       SettingsDocumentData,
       SettingsDocumentDataSocialsItem,
@@ -1416,6 +1415,10 @@ declare module "@prismicio/client" {
       CustomerLogosSliceDefaultItem,
       CustomerLogosSliceVariation,
       CustomerLogosSliceDefault,
+      GallerySlice,
+      GallerySliceDefaultItem,
+      GallerySliceVariation,
+      GallerySliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceHero2Primary,

@@ -18,7 +18,8 @@ module.exports = {
           DEFAULT: '#fff8e0',
           darklight: '#61728b',
           dark: '#303f55',
-          darker: '#0f132a'
+          darker: '#0f132a',
+          brown: 'rgba(120,53,15,.7)'
         },
       }
     },

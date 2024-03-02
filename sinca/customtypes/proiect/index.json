@@ -13,16 +13,18 @@
         "type": "UID"
       },
       "title": {
-        "type": "Text",
+        "type": "StructuredText",
         "config": {
-          "label": "title",
-          "placeholder": ""
+          "label": "Title",
+          "placeholder": "",
+          "allowTargetBlank": false,
+          "single": "heading1"
         }
       },
       "description": {
         "type": "StructuredText",
         "config": {
-          "label": "description",
+          "label": "Description",
           "placeholder": "",
           "allowTargetBlank": true,
           "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
@@ -39,7 +41,7 @@
       "eyebrow": {
         "type": "StructuredText",
         "config": {
-          "label": "eyebrow",
+          "label": "Eyebrow",
           "placeholder": "",
           "allowTargetBlank": true,
           "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
@@ -50,6 +52,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "gallery": {
+              "type": "SharedSlice"
+            },
             "quote": {
               "type": "SharedSlice"
             },

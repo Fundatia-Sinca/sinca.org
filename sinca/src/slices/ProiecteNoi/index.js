@@ -4,7 +4,6 @@ import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import clsx from "clsx";
 import { Bounded } from "@/components/Bounded";
 import { PrismicRichText } from "@/components/PrismicRichText";
-import { Heading } from "@/components/Heading";
 
 /**
  * @typedef {import("@prismicio/client").Content.ProiecteNoiSlice} ProiecteNoiSlice
@@ -22,9 +21,7 @@ const TextWithImage = ({proiect, reverse = false}) => {
           </div>
         }
       <div className="border border-brand-darklight lg:border-slate-300 bg-brand-light p-6 text-slate-600 lg:max-w-[60%] lg:p-20">
-        <Heading as="h3" size="lg" className="mb-4 mt-12 first:mt-0 last:mb-0">
-          {proiect.data.title}
-        </Heading>
+        <PrismicRichText field={proiect.data.title} />
         <PrismicRichText field={proiect.data.description} />
         <PrismicNextLink
             className="py-3 px-5 border border-brand-dark text-brand-dark hover:bg-brand-darker hover:text-white inline-block"
