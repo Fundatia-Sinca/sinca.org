@@ -33,6 +33,13 @@
           "constraint": {},
           "thumbnails": []
         }
+      },
+      "order": {
+        "type": "Number",
+        "config": {
+          "label": "Order",
+          "placeholder": ""
+        }
       }
     }
   }

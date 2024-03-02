@@ -38,18 +38,7 @@
           }
         }
       },
-      "items": {
-        "persoane": {
-          "type": "Link",
-          "config": {
-            "label": "persoane",
-            "select": "document",
-            "customtypes": [
-              "persoana"
-            ]
-          }
-        }
-      }
+      "items": {}
     }
   ]
 }

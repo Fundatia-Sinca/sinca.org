@@ -267,6 +267,17 @@ interface PersoanaDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * Order field in *Persoana*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: persoana.order
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  order: prismic.NumberField;
 }
 
 /**
@@ -641,21 +652,6 @@ export interface EchipaSliceDefaultPrimary {
 }
 
 /**
- * Primary content in *Echipa → Items*
- */
-export interface EchipaSliceDefaultItem {
-  /**
-   * persoane field in *Echipa → Items*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: echipa.items[].persoane
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  persoane: prismic.ContentRelationshipField<"persoana">;
-}
-
-/**
  * Default variation for Echipa Slice
  *
  * - **API ID**: `default`
@@ -665,7 +661,7 @@ export interface EchipaSliceDefaultItem {
 export type EchipaSliceDefault = prismic.SharedSliceVariation<
   "default",
   Simplify<EchipaSliceDefaultPrimary>,
-  Simplify<EchipaSliceDefaultItem>
+  never
 >;
 
 /**
@@ -1817,7 +1813,6 @@ declare module "@prismicio/client" {
       CustomerLogosSliceDefault,
       EchipaSlice,
       EchipaSliceDefaultPrimary,
-      EchipaSliceDefaultItem,
       EchipaSliceVariation,
       EchipaSliceDefault,
       GallerySlice,
