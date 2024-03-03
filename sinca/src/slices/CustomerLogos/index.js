@@ -14,7 +14,7 @@ const CustomerLogos = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="py-20 bg-brand-superlight"
+      className="py-20 bg-brand"
     >
       <div>
         {isFilled.richText(slice.primary.eyebrowHeadline) && (

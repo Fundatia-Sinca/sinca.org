@@ -138,6 +138,7 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | ParteneriSlice
   | EchipaSlice
   | SixBoxesSlice
   | ImageWithStatsSlice
@@ -1274,6 +1275,86 @@ export type ImageWithStatsSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *Parteneri → Primary*
+ */
+export interface ParteneriSliceDefaultPrimary {
+  /**
+   * Title field in *Parteneri → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: parteneri.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Text field in *Parteneri → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: parteneri.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Parteneri → Items*
+ */
+export interface ParteneriSliceDefaultItem {
+  /**
+   * Image field in *Parteneri → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: parteneri.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Link field in *Parteneri → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: parteneri.items[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Default variation for Parteneri Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ParteneriSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ParteneriSliceDefaultPrimary>,
+  Simplify<ParteneriSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Parteneri*
+ */
+type ParteneriSliceVariation = ParteneriSliceDefault;
+
+/**
+ * Parteneri Shared Slice
+ *
+ * - **API ID**: `parteneri`
+ * - **Description**: Parteneri
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ParteneriSlice = prismic.SharedSlice<
+  "parteneri",
+  ParteneriSliceVariation
+>;
+
+/**
  * Primary content in *ProiecteNoi → Primary*
  */
 export interface ProiecteNoiSliceDefaultPrimary {
@@ -1847,6 +1928,11 @@ declare module "@prismicio/client" {
       ImageWithStatsSliceDefaultItem,
       ImageWithStatsSliceVariation,
       ImageWithStatsSliceDefault,
+      ParteneriSlice,
+      ParteneriSliceDefaultPrimary,
+      ParteneriSliceDefaultItem,
+      ParteneriSliceVariation,
+      ParteneriSliceDefault,
       ProiecteNoiSlice,
       ProiecteNoiSliceDefaultPrimary,
       ProiecteNoiSliceVariation,
