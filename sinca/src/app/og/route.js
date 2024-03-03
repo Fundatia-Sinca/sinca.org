@@ -4,7 +4,7 @@ import { ImageResponse } from 'next/og';
  
 export const runtime = 'edge';
  
-export async function GET(request: Request) {
+export async function GET() {
   try {
     const { searchParams } = new URL(request.url);
  
@@ -67,7 +67,7 @@ export async function GET(request: Request) {
         height: 630,
       },
     );
-  } catch (e: any) {
+  } catch (e) {
     console.log(`${e.message}`);
     return new Response(`Failed to generate the image`, {
       status: 500,
