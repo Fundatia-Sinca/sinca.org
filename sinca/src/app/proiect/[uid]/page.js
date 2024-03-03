@@ -28,7 +28,11 @@ export async function generateMetadata({ params }) {
       title: page.data.meta_title,
       images: [
         {
-          url: page.data.meta_image.url,
+          url: `/og?title=${page.data.meta_title}`,
+          width: 960,
+          height: 540,
+          title: `${page.data.meta_title}`,
+          type: "image/png",
         },
       ],
     },
