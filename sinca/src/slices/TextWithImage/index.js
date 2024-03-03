@@ -10,7 +10,7 @@ const TextWithImage = ({ slice }) => {
     <Bounded as="section" className="bg-brand-superlight">
       <div className={clsx("flex flex-col-reverse relative", slice.primary.reverse ? 'lg:flex-row-reverse' : 'lg:flex-row')}>
         {prismic.isFilled.richText(slice.primary.eyebrow) && 
-          <div className={clsx("text-slate-800 p-10 bg-brand max-w-[14rem] absolute -top-24 lg:top-[unset] lg:bottom-20 z-10", slice.primary.reverse ? 'left-0' : 'right-0')}>
+          <div className={clsx("text-slate-800 p-10 bg-brand max-w-[14rem] absolute -top-24 lg:top-[unset] lg:bottom-20 z-10", slice.primary.reverse ? 'left-0 lg:-left-12' : 'right-0 lg:-right-12')}>
             <PrismicRichText field={slice.primary.eyebrow} />
           </div>
         }

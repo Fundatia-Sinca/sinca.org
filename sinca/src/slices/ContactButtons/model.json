@@ -1,0 +1,69 @@
+{
+  "id": "contact_buttons",
+  "type": "SharedSlice",
+  "name": "ContactButtons",
+  "description": "ContactButtons",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title_whatsapp": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title Whatsapp",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "text_whatsapp": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Text Whatsapp",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "phone_number": {
+          "type": "Number",
+          "config": {
+            "label": "Phone Number",
+            "placeholder": ""
+          }
+        },
+        "title_email": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title Email",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "text_email": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Text Email",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "email": {
+          "type": "Text",
+          "config": {
+            "label": "Email",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

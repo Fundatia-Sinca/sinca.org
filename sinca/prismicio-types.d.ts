@@ -138,6 +138,7 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | ContactButtonsSlice
   | ParteneriSlice
   | EchipaSlice
   | SixBoxesSlice
@@ -526,6 +527,101 @@ export type AllDocumentTypes =
   | PersoanaDocument
   | ProiectDocument
   | SettingsDocument;
+
+/**
+ * Primary content in *ContactButtons → Primary*
+ */
+export interface ContactButtonsSliceDefaultPrimary {
+  /**
+   * Title Whatsapp field in *ContactButtons → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_buttons.primary.title_whatsapp
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title_whatsapp: prismic.RichTextField;
+
+  /**
+   * Text Whatsapp field in *ContactButtons → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_buttons.primary.text_whatsapp
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text_whatsapp: prismic.RichTextField;
+
+  /**
+   * Phone Number field in *ContactButtons → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_buttons.primary.phone_number
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  phone_number: prismic.NumberField;
+
+  /**
+   * Title Email field in *ContactButtons → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_buttons.primary.title_email
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title_email: prismic.RichTextField;
+
+  /**
+   * Text Email field in *ContactButtons → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_buttons.primary.text_email
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text_email: prismic.RichTextField;
+
+  /**
+   * Email field in *ContactButtons → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_buttons.primary.email
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for ContactButtons Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactButtonsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ContactButtonsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ContactButtons*
+ */
+type ContactButtonsSliceVariation = ContactButtonsSliceDefault;
+
+/**
+ * ContactButtons Shared Slice
+ *
+ * - **API ID**: `contact_buttons`
+ * - **Description**: ContactButtons
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactButtonsSlice = prismic.SharedSlice<
+  "contact_buttons",
+  ContactButtonsSliceVariation
+>;
 
 /**
  * Primary content in *CustomerLogos → Primary*
@@ -1887,6 +1983,10 @@ declare module "@prismicio/client" {
       SettingsDocumentData,
       SettingsDocumentDataSocialsItem,
       AllDocumentTypes,
+      ContactButtonsSlice,
+      ContactButtonsSliceDefaultPrimary,
+      ContactButtonsSliceVariation,
+      ContactButtonsSliceDefault,
       CustomerLogosSlice,
       CustomerLogosSliceDefaultPrimary,
       CustomerLogosSliceDefaultItem,
