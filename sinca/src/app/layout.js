@@ -33,6 +33,10 @@ export default async function RootLayout({ children }) {
   );
 }
 
+export const metadata = {
+  metadataBase: process.env.VERCEL_URL ? new URL(`https://nextjs-prismic-sand.vercel.app/`) : new URL(`http://localhost:${process.env.PORT || 3000}`),
+}
+
 async function Header() {
   const client = createClient();
   const settings = await client.getSingle("settings");
