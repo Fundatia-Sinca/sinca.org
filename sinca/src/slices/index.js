@@ -9,6 +9,7 @@ export const components = {
   gallery: dynamic(() => import("./Gallery")),
   hero: dynamic(() => import("./Hero")),
   hero_2: dynamic(() => import("./Hero2")),
+  hero_full_photo: dynamic(() => import("./HeroFullPhoto")),
   image: dynamic(() => import("./Image")),
   image_cards: dynamic(() => import("./ImageCards")),
   image_with_stats: dynamic(() => import("./ImageWithStats")),

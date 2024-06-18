@@ -138,6 +138,9 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | HeroFullPhotoSlice
+  | ImageCardsSlice
+  | Hero2Slice
   | ContactButtonsSlice
   | ParteneriSlice
   | EchipaSlice
@@ -1151,6 +1154,112 @@ type Hero2SliceVariation = Hero2SliceDefault | Hero2SliceImageRight;
 export type Hero2Slice = prismic.SharedSlice<"hero_2", Hero2SliceVariation>;
 
 /**
+ * Primary content in *HeroFullPhoto → Primary*
+ */
+export interface HeroFullPhotoSliceDefaultPrimary {
+  /**
+   * cover photo field in *HeroFullPhoto → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_full_photo.primary.cover_photo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  cover_photo: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for HeroFullPhoto Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroFullPhotoSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeroFullPhotoSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *HeroFullPhoto → Primary*
+ */
+export interface HeroFullPhotoSliceHeroFullPhotoWithTextPrimary {
+  /**
+   * cover photo field in *HeroFullPhoto → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_full_photo.primary.cover_photo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  cover_photo: prismic.ImageField<never>;
+
+  /**
+   * cover photo title field in *HeroFullPhoto → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_full_photo.primary.cover_photo_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  cover_photo_title: prismic.RichTextField;
+
+  /**
+   * contact us button field in *HeroFullPhoto → Primary*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_full_photo.primary.contact_us
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  contact_us: prismic.LinkToMediaField;
+
+  /**
+   * contact us label field in *HeroFullPhoto → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_full_photo.primary.contact_label
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  contact_label: prismic.RichTextField;
+}
+
+/**
+ * Hero Full Photo With Text variation for HeroFullPhoto Slice
+ *
+ * - **API ID**: `heroFullPhotoWithText`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroFullPhotoSliceHeroFullPhotoWithText =
+  prismic.SharedSliceVariation<
+    "heroFullPhotoWithText",
+    Simplify<HeroFullPhotoSliceHeroFullPhotoWithTextPrimary>,
+    never
+  >;
+
+/**
+ * Slice variation for *HeroFullPhoto*
+ */
+type HeroFullPhotoSliceVariation =
+  | HeroFullPhotoSliceDefault
+  | HeroFullPhotoSliceHeroFullPhotoWithText;
+
+/**
+ * HeroFullPhoto Shared Slice
+ *
+ * - **API ID**: `hero_full_photo`
+ * - **Description**: HeroFullPhoto
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroFullPhotoSlice = prismic.SharedSlice<
+  "hero_full_photo",
+  HeroFullPhotoSliceVariation
+>;
+
+/**
  * Primary content in *Image → Primary*
  */
 export interface ImageSliceDefaultPrimary {
@@ -2012,6 +2121,12 @@ declare module "@prismicio/client" {
       Hero2SliceVariation,
       Hero2SliceDefault,
       Hero2SliceImageRight,
+      HeroFullPhotoSlice,
+      HeroFullPhotoSliceDefaultPrimary,
+      HeroFullPhotoSliceHeroFullPhotoWithTextPrimary,
+      HeroFullPhotoSliceVariation,
+      HeroFullPhotoSliceDefault,
+      HeroFullPhotoSliceHeroFullPhotoWithText,
       ImageSlice,
       ImageSliceDefaultPrimary,
       ImageSliceBannerPrimary,

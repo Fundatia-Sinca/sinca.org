@@ -1,0 +1,72 @@
+{
+  "id": "hero_full_photo",
+  "type": "SharedSlice",
+  "name": "HeroFullPhoto",
+  "description": "HeroFullPhoto",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "cover_photo": {
+          "type": "Image",
+          "config": {
+            "label": "cover photo",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "heroFullPhotoWithText",
+      "name": "Hero Full Photo With Text",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "cover_photo": {
+          "type": "Image",
+          "config": {
+            "label": "cover photo",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "cover_photo_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "cover photo title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink"
+          }
+        },
+        "contact_us": {
+          "type": "Link",
+          "config": {
+            "label": "contact us button",
+            "placeholder": "",
+            "select": "media"
+          }
+        },
+        "contact_label": {
+          "type": "StructuredText",
+          "config": {
+            "label": "contact us label",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
