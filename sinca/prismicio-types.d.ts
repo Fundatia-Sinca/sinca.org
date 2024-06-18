@@ -875,6 +875,16 @@ export type HeroSliceDefault = prismic.SharedSliceVariation<
  */
 export interface HeroSliceHero2Primary {
   /**
+   * Title field in *Hero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
    * Text field in *Hero → Primary*
    *
    * - **Field Type**: Rich Text
