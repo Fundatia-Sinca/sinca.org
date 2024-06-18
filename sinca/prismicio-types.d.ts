@@ -80,45 +80,33 @@ export type ContactDocument<Lang extends string = string> =
     Lang
   >;
 
-/**
- * Item in *Navigation → Links*
- */
-export interface NavigationDocumentDataLinksItem {
-  /**
-   * Label field in *Navigation → Links*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: Optional - Label for the link
-   * - **API ID Path**: navigation.links[].label
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  label: prismic.TitleField;
-
-  /**
-   * Link field in *Navigation → Links*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: Link for navigation item
-   * - **API ID Path**: navigation.links[].link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link: prismic.LinkField;
-}
+type NavigationDocumentDataSlicesSlice = NavigationItemSlice;
 
 /**
  * Content for Navigation documents
  */
 interface NavigationDocumentData {
   /**
-   * Links field in *Navigation*
+   * Navigation List field in *Navigation*
    *
-   * - **Field Type**: Group
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: navigation.links[]
+   * - **API ID Path**: navigation.navigation_list
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#group
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  links: prismic.GroupField<Simplify<NavigationDocumentDataLinksItem>>;
+  navigation_list: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *Navigation*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<NavigationDocumentDataSlicesSlice>;
 }
 
 /**
@@ -131,13 +119,14 @@ interface NavigationDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type NavigationDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
+  prismic.PrismicDocumentWithUID<
     Simplify<NavigationDocumentData>,
     "navigation",
     Lang
   >;
 
 type PageDocumentDataSlicesSlice =
+  | ProiecteRecenteSlice
   | HeroFullPhotoSlice
   | ImageCardsSlice
   | Hero2Slice
@@ -1470,6 +1459,86 @@ export type ImageWithStatsSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *NavigationItem → Primary*
+ */
+export interface NavigationItemSliceDefaultPrimary {
+  /**
+   * Name field in *NavigationItem → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_item.primary.name
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  name: prismic.RichTextField;
+
+  /**
+   * Link field in *NavigationItem → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_item.primary.link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Primary content in *NavigationItem → Items*
+ */
+export interface NavigationItemSliceDefaultItem {
+  /**
+   * Child Name field in *NavigationItem → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_item.items[].child_name
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  child_name: prismic.RichTextField;
+
+  /**
+   * Child Link field in *NavigationItem → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_item.items[].child_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  child_link: prismic.LinkField;
+}
+
+/**
+ * Default variation for NavigationItem Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NavigationItemSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<NavigationItemSliceDefaultPrimary>,
+  Simplify<NavigationItemSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *NavigationItem*
+ */
+type NavigationItemSliceVariation = NavigationItemSliceDefault;
+
+/**
+ * NavigationItem Shared Slice
+ *
+ * - **API ID**: `navigation_item`
+ * - **Description**: NavigationItem
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NavigationItemSlice = prismic.SharedSlice<
+  "navigation_item",
+  NavigationItemSliceVariation
+>;
+
+/**
  * Primary content in *Parteneri → Primary*
  */
 export interface ParteneriSliceDefaultPrimary {
@@ -1612,6 +1681,146 @@ type ProiecteNoiSliceVariation = ProiecteNoiSliceDefault;
 export type ProiecteNoiSlice = prismic.SharedSlice<
   "proiecte_noi",
   ProiecteNoiSliceVariation
+>;
+
+/**
+ * Primary content in *ProiecteRecente → Primary*
+ */
+export interface ProiecteRecenteSliceDefaultPrimary {
+  /**
+   * title field in *ProiecteRecente → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proiecte_recente.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * description field in *ProiecteRecente → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proiecte_recente.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * background image field in *ProiecteRecente → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proiecte_recente.primary.background_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background_image: prismic.ImageField<never>;
+
+  /**
+   * about us field in *ProiecteRecente → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proiecte_recente.primary.about_us
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  about_us: prismic.LinkField;
+
+  /**
+   * about us label field in *ProiecteRecente → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proiecte_recente.primary.about_us_label
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  about_us_label: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *ProiecteRecente → Items*
+ */
+export interface ProiecteRecenteSliceDefaultItem {
+  /**
+   * project preview image field in *ProiecteRecente → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proiecte_recente.items[].project_preview_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  project_preview_image: prismic.ImageField<never>;
+
+  /**
+   * project title field in *ProiecteRecente → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proiecte_recente.items[].project_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  project_title: prismic.RichTextField;
+
+  /**
+   * project short description field in *ProiecteRecente → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proiecte_recente.items[].project_short_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  project_short_description: prismic.RichTextField;
+
+  /**
+   * project link field in *ProiecteRecente → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proiecte_recente.items[].project_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  project_link: prismic.LinkField;
+
+  /**
+   * project_link_label field in *ProiecteRecente → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proiecte_recente.items[].project_link_label
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  project_link_label: prismic.RichTextField;
+}
+
+/**
+ * Default variation for ProiecteRecente Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProiecteRecenteSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ProiecteRecenteSliceDefaultPrimary>,
+  Simplify<ProiecteRecenteSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *ProiecteRecente*
+ */
+type ProiecteRecenteSliceVariation = ProiecteRecenteSliceDefault;
+
+/**
+ * ProiecteRecente Shared Slice
+ *
+ * - **API ID**: `proiecte_recente`
+ * - **Description**: ProiecteRecente
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProiecteRecenteSlice = prismic.SharedSlice<
+  "proiecte_recente",
+  ProiecteRecenteSliceVariation
 >;
 
 /**
@@ -2079,7 +2288,7 @@ declare module "@prismicio/client" {
       ContactDocumentDataSlicesSlice,
       NavigationDocument,
       NavigationDocumentData,
-      NavigationDocumentDataLinksItem,
+      NavigationDocumentDataSlicesSlice,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
@@ -2143,6 +2352,11 @@ declare module "@prismicio/client" {
       ImageWithStatsSliceDefaultItem,
       ImageWithStatsSliceVariation,
       ImageWithStatsSliceDefault,
+      NavigationItemSlice,
+      NavigationItemSliceDefaultPrimary,
+      NavigationItemSliceDefaultItem,
+      NavigationItemSliceVariation,
+      NavigationItemSliceDefault,
       ParteneriSlice,
       ParteneriSliceDefaultPrimary,
       ParteneriSliceDefaultItem,
@@ -2152,6 +2366,11 @@ declare module "@prismicio/client" {
       ProiecteNoiSliceDefaultPrimary,
       ProiecteNoiSliceVariation,
       ProiecteNoiSliceDefault,
+      ProiecteRecenteSlice,
+      ProiecteRecenteSliceDefaultPrimary,
+      ProiecteRecenteSliceDefaultItem,
+      ProiecteRecenteSliceVariation,
+      ProiecteRecenteSliceDefault,
       QuoteSlice,
       QuoteSliceDefaultPrimary,
       QuoteSliceVariation,
