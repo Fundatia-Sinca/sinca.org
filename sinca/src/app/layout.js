@@ -24,7 +24,7 @@ export default async function RootLayout({ children }) {
       <body className="overflow-x-hidden antialiased ">
         {/* @ts-expect-error Async Server Component */}
         <Header />
-        <div className="mt-36">
+        <div className="mt-24">
         {children}
         </div>
         <Footer />
@@ -46,7 +46,7 @@ async function Header() {
 
   return (
     <div className="fixed top-0 left-0 w-full bg-white z-50 shadow-md">
-      <Bounded as="header" yPadding="sm">
+      <Bounded as="header" yPadding="xs">
       <div className="flex flex-wrap justify-between gap-x-6 gap-y-3 leading-none items-center">
         <PrismicNextLink
           href="/"
