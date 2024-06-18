@@ -21,10 +21,12 @@ const inter = Inter({
 export default async function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="overflow-x-hidden antialiased bg-brand-light">
+      <body className="overflow-x-hidden antialiased ">
         {/* @ts-expect-error Async Server Component */}
         <Header />
+        <div className="mt-36">
         {children}
+        </div>
         <Footer />
         <PrismicPreview repositoryName={repositoryName} />
         <script async defer src="https://static.cdn.prismic.io/prismic.js?new=true&repo=sinca"></script>
@@ -43,8 +45,9 @@ async function Header() {
   const navigation = await client.getSingle("navigation");
 
   return (
-    <Bounded as="header" yPadding="sm">
-      <div className="flex flex-wrap justify-between gap-x-6 gap-y-3 leading-none items-center border-b border-brand pb-4">
+    <div className="fixed top-0 left-0 w-full bg-white z-50 shadow-md">
+      <Bounded as="header" yPadding="sm">
+      <div className="flex flex-wrap justify-between gap-x-6 gap-y-3 leading-none items-center">
         <PrismicNextLink
           href="/"
           className="text-xl font-semibold tracking-tight flex flex-row items-center text-slate-800 gap-x-4"
@@ -63,6 +66,8 @@ async function Header() {
         <Navigation navigation={navigation} />
       </div>
     </Bounded>
+    </div>
+
   );
 }
 

@@ -25,7 +25,7 @@ export function Navigation({ navigation }) {
             {navigation.data?.links.slice(0, -2).map((item) => (
               <li
                 key={prismic.asText(item.label)}
-                className="font-medium text-slate-700 hover:text-slate-800"
+                className="font-medium text-slate-700 hover:text-slate-800 uppercase"
               >
                 <PrismicNextLink field={item.link}>
                   <PrismicText field={item.label} />
@@ -34,14 +34,14 @@ export function Navigation({ navigation }) {
             ))}
           </ul>
         </nav>
-        <ul className="hidden lg:flex flex-wrap gap-6 md:gap-10 ml-auto">
+        <ul className="hidden lg:flex flex-wrap gap-6 md:gap-10 ml-auto uppercase">
         {navigation.data?.links.slice(-2).map((item) => (
               <li
                 key={prismic.asText(item.label)}
                 className="font-medium"
               >
                 <PrismicNextLink 
-                  className={prismic.asText(item.label)== 'Doneaza' ? 'py-3 px-5 bg-brand-dark text-white hover:bg-brand-darker' : 'text-slate-700 hover:text-slate-800'} field={item.link}>
+                  className={prismic.asText(item.label) == 'Doneaza' ? 'py-3 px-5 bg-brand-dark text-white hover:bg-brand-darker' : 'text-slate-700 hover:text-slate-800'} field={item.link}>
                   <PrismicText field={item.label}/>
                 </PrismicNextLink>
               </li>
