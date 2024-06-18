@@ -10,6 +10,10 @@ module.exports = {
       sans: 'var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
     },
     extend: {
+      maxHeight: {
+        '128' : '32rem',
+        '144' : '36rem',
+      },
       colors: {
         'brand': {
           superlight: '#fffff8',

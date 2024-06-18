@@ -24,6 +24,17 @@
 						}
 					}
 				]
+			},
+			"review": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ipsum ex irure ex quis enim culpa adipisicing. Elit ut ut nisi pariatur do consectetur cupidatat consequat laboris ea."
+						}
+					}
+				]
 			}
 		},
 		"items": [

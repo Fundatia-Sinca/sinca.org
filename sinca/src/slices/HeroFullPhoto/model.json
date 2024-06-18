@@ -45,7 +45,7 @@
             "label": "cover photo title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink"
+            "multi": "heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,paragraph,preformatted"
           }
         },
         "contact_us": {

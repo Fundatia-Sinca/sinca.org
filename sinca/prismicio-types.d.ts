@@ -944,16 +944,6 @@ export interface HeroSliceHero2Primary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
-
-  /**
-   * Review field in *Hero → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.review
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  review: prismic.RichTextField;
 }
 
 /**
@@ -1502,6 +1492,16 @@ export interface ParteneriSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   text: prismic.RichTextField;
+
+  /**
+   * review field in *Parteneri → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: parteneri.primary.review
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  review: prismic.RichTextField;
 }
 
 /**
