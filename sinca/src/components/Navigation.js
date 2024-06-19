@@ -95,7 +95,7 @@ export function Navigation({ navigation }) {
             <PrismicNextLink
               className={
                 prismic.asText(slice.primary.name) === "Donează"
-                  ? "py-3 px-5 bg-brand-brown text-brand-light hover:bg-brand-light hover:text-brand-brown"
+                  ? "py-3 px-5 rounded  bg-brand-brown text-brand-light hover:bg-brand-light hover:text-brand-brown"
                   : "text-brand-dark hover:text-brand-brown"
               }
               field={slice.primary.link}
