@@ -14,6 +14,16 @@ export function Navigation({ navigation }) {
   const mainLinks = navigation.data.slices.slice(0, -2);
   const specialLinks = navigation.data.slices.slice(-2);
 
+  const [activeParent, setActiveParent] = useState(null); // Track active parent link
+
+  const toggleChildLinks = (index) => {
+    if (activeParent === index) {
+      setActiveParent(null); // Close if clicking again on the active parent
+    } else {
+      setActiveParent(index); // Open clicked parent link
+    }
+  };
+
   return (
     <>
       <button
@@ -54,14 +64,20 @@ export function Navigation({ navigation }) {
               key={prismic.asText(slice.primary.name)}
               className="font-medium text-brand-darker  uppercase relative group"
             >
-              <PrismicNextLink field={slice.primary.link} className="hover:text-yellow-400">
+              <PrismicNextLink
+                field={slice.primary.link}
+                className="hover:text-yellow-400"
+              >
                 <PrismicText field={slice.primary.name} />
               </PrismicNextLink>
               {slice.items.length > 0 && (
-                <ul className="absolute left-1/2 transform -translate-x-1/2 rounded hidden space-y-5 p-5 bg-white shadow-lg group-hover:block">
+                <ul className="absolute left-1/2 transform -translate-x-1/2 text-center rounded hidden space-y-5 p-5 bg-white shadow-lg group-hover:block">
                   {slice.items.map((item, itemIndex) => (
                     <li key={itemIndex}>
-                      <PrismicNextLink field={item.child_link} className="hover:text-yellow-400">
+                      <PrismicNextLink
+                        field={item.child_link}
+                        className="hover:text-yellow-400"
+                      >
                         <PrismicText field={item.child_name} />
                       </PrismicNextLink>
                     </li>
@@ -89,19 +105,45 @@ export function Navigation({ navigation }) {
         ))}
       </ul>
       {isMenuActive && (
-        <nav className="w-full pt-4">
+        <nav className="lg:hidden w-full pt-4">
           <ul className="flex flex-col w-full">
-            {navigation.data.slices.map((slice) => (
+            {navigation.data.slices.map((slice, index) => (
               <li
-                onClick={handleMenuClick}
                 key={prismic.asText(slice.primary.name)}
-                className="font-medium py-4 border-b border-border-brand last:border-none last:pb-0 text-slate-700 hover:text-slate-800"
+                className="font-medium py-4 border-b border-border-brand last:border-none last:pb-0 text-slate-700 hover:text-slate-800 relative"
               >
-                <PrismicNextLink field={slice.primary.link}>
+                <div
+                  onClick={() => toggleChildLinks(index)} // Toggle children on click
+                  className="flex items-center justify-between cursor-pointer"
+                >
                   <PrismicText field={slice.primary.name} />
-                </PrismicNextLink>
-                {slice.items.length > 0 && (
-                  <ul className="ms-5 mt-2 space-y-4">
+
+                  {/* Display chevron with dynamic rotation based on activeParent */}
+                  {slice.items.length > 0 && (
+                    <svg
+                      className={`w-4 h-4 ml-2 transform ${
+                        activeParent === index ? "rotate-180" : ""
+                      }`}
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 7.414l3.293 3.293a1 1 0 01-1.414 1.414l-2.586-2.586-2.586 2.586a1 1 0 01-1.414-1.414L10 7.414z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  )}
+                </div>
+
+                {/* Render child links only if this parent is active */}
+                {activeParent === index && slice.items.length > 0 && (
+                  <ul className="ms-5 mt-4 space-y-4">
+                    {" "}
+                    <PrismicNextLink field={slice.primary.link}>
+                      <PrismicText field={slice.primary.name} />
+                    </PrismicNextLink>
                     {slice.items.map((item, itemIndex) => (
                       <li key={itemIndex}>
                         <PrismicNextLink field={item.child_link}>
