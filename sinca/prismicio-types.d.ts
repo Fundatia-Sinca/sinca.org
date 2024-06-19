@@ -460,6 +460,8 @@ export interface SettingsDocumentDataSocialsItem {
   tiktok: prismic.LinkField;
 }
 
+type SettingsDocumentDataSlicesSlice = FooterLinksSlice;
+
 /**
  * Content for Settings documents
  */
@@ -496,6 +498,17 @@ interface SettingsDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#group
    */
   socials: prismic.GroupField<Simplify<SettingsDocumentDataSocialsItem>>;
+
+  /**
+   * Slice Zone field in *Settings*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<SettingsDocumentDataSlicesSlice>;
 }
 
 /**
@@ -857,6 +870,86 @@ type FAskedQuestionsSliceVariation = FAskedQuestionsSliceDefault;
 export type FAskedQuestionsSlice = prismic.SharedSlice<
   "f_asked_questions",
   FAskedQuestionsSliceVariation
+>;
+
+/**
+ * Primary content in *FooterLinks → Primary*
+ */
+export interface FooterLinksSliceDefaultPrimary {
+  /**
+   * Footer Description field in *FooterLinks → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_links.primary.footer_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  footer_description: prismic.RichTextField;
+
+  /**
+   * Footer Title field in *FooterLinks → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_links.primary.footer_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  footer_title: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *FooterLinks → Items*
+ */
+export interface FooterLinksSliceDefaultItem {
+  /**
+   * Option Title field in *FooterLinks → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_links.items[].option_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  option_title: prismic.RichTextField;
+
+  /**
+   * Option Link field in *FooterLinks → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer_links.items[].option_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  option_link: prismic.LinkField;
+}
+
+/**
+ * Default variation for FooterLinks Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FooterLinksSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FooterLinksSliceDefaultPrimary>,
+  Simplify<FooterLinksSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *FooterLinks*
+ */
+type FooterLinksSliceVariation = FooterLinksSliceDefault;
+
+/**
+ * FooterLinks Shared Slice
+ *
+ * - **API ID**: `footer_links`
+ * - **Description**: FooterLinks
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FooterLinksSlice = prismic.SharedSlice<
+  "footer_links",
+  FooterLinksSliceVariation
 >;
 
 /**
@@ -2492,6 +2585,7 @@ declare module "@prismicio/client" {
       SettingsDocument,
       SettingsDocumentData,
       SettingsDocumentDataSocialsItem,
+      SettingsDocumentDataSlicesSlice,
       AllDocumentTypes,
       ContactButtonsSlice,
       ContactButtonsSliceDefaultPrimary,
@@ -2511,6 +2605,11 @@ declare module "@prismicio/client" {
       FAskedQuestionsSliceDefaultItem,
       FAskedQuestionsSliceVariation,
       FAskedQuestionsSliceDefault,
+      FooterLinksSlice,
+      FooterLinksSliceDefaultPrimary,
+      FooterLinksSliceDefaultItem,
+      FooterLinksSliceVariation,
+      FooterLinksSliceDefault,
       GallerySlice,
       GallerySliceDefaultItem,
       GallerySliceVariation,
