@@ -25,7 +25,7 @@ const HeroFullPhoto = ({ slice }) => {
 
        {/* centered title of the section if variation is different than default */}
        {!isFullPhoto && title && (
-        <div className="hidden sm:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
+        <div className="hidden sm:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-red-900">
           <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl uppercase ">
             <PrismicText field={title} />
           </div>

@@ -14,6 +14,7 @@ export const components = {
   image: dynamic(() => import("./Image")),
   image_cards: dynamic(() => import("./ImageCards")),
   image_with_stats: dynamic(() => import("./ImageWithStats")),
+  location_stats: dynamic(() => import("./LocationStats")),
   navigation_item: dynamic(() => import("./NavigationItem")),
   parteneri: dynamic(() => import("./Parteneri")),
   proiecte_noi: dynamic(() => import("./ProiecteNoi")),

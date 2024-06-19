@@ -35,6 +35,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "location_stats": {
+              "type": "SharedSlice"
+            },
             "f_asked_questions": {
               "type": "SharedSlice"
             },

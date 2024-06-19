@@ -36,11 +36,11 @@ const ProiecteRecente = ({ slice }) => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 ">
           {slice.items.map((proiect, index) => (
             <div
               key={index}
-              className="bg-white p-4 shadow-md rounded-lg flex flex-col"
+              className="bg-white p-4 shadow-md rounded-lg flex flex-col hover:border hover:border-red-400 hover:shadow-2xl"
             >
               <PrismicNextImage
                 field={proiect.project_preview_image}

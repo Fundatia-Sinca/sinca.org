@@ -126,6 +126,7 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | LocationStatsSlice
   | FAskedQuestionsSlice
   | ProiecteRecenteSlice
   | HeroFullPhotoSlice
@@ -1560,6 +1561,96 @@ export type ImageWithStatsSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *LocationStats → Primary*
+ */
+export interface LocationStatsSliceDefaultPrimary {
+  /**
+   * Title field in *LocationStats → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: location_stats.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *LocationStats → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: location_stats.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Background Image field in *LocationStats → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: location_stats.primary.background_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background_image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *LocationStats → Items*
+ */
+export interface LocationStatsSliceDefaultItem {
+  /**
+   * Project Title field in *LocationStats → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: location_stats.items[].project_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  project_title: prismic.RichTextField;
+
+  /**
+   * Location field in *LocationStats → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: location_stats.items[].location
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  location: prismic.RichTextField;
+}
+
+/**
+ * Default variation for LocationStats Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LocationStatsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<LocationStatsSliceDefaultPrimary>,
+  Simplify<LocationStatsSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *LocationStats*
+ */
+type LocationStatsSliceVariation = LocationStatsSliceDefault;
+
+/**
+ * LocationStats Shared Slice
+ *
+ * - **API ID**: `location_stats`
+ * - **Description**: LocationStats
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LocationStatsSlice = prismic.SharedSlice<
+  "location_stats",
+  LocationStatsSliceVariation
+>;
+
+/**
  * Primary content in *NavigationItem → Primary*
  */
 export interface NavigationItemSliceDefaultPrimary {
@@ -2458,6 +2549,11 @@ declare module "@prismicio/client" {
       ImageWithStatsSliceDefaultItem,
       ImageWithStatsSliceVariation,
       ImageWithStatsSliceDefault,
+      LocationStatsSlice,
+      LocationStatsSliceDefaultPrimary,
+      LocationStatsSliceDefaultItem,
+      LocationStatsSliceVariation,
+      LocationStatsSliceDefault,
       NavigationItemSlice,
       NavigationItemSliceDefaultPrimary,
       NavigationItemSliceDefaultItem,

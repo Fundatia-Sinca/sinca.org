@@ -14,7 +14,7 @@ const CustomerLogos = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="py-20 bg-brand"
+      className="py-20 mt-10 bg-brand text-center"
     >
       <div>
         {isFilled.richText(slice.primary.eyebrowHeadline) && (
@@ -44,7 +44,7 @@ const CustomerLogos = ({ slice }) => {
         )}
         <PrismicNextLink
           field={slice.primary.callToActionLink}
-          className=""
+          className="mt-8 py-3 px-5 bg-white text-brand-dark hover:bg-brand-dark hover:text-white inline-block rounded-md"
         >
           {slice.primary.callToActionLabel}
         </PrismicNextLink>
