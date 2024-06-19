@@ -9,6 +9,7 @@ export function Navigation({ navigation }) {
 
   const handleMenuClick = () => {
     setMenuActive(!isMenuActive);
+    setActiveParent(null);
   };
 
   const mainLinks = navigation.data.slices.slice(0, -2);
