@@ -14,13 +14,13 @@ export function Navigation({ navigation }) {
   const mainLinks = navigation.data.slices.slice(0, -2);
   const specialLinks = navigation.data.slices.slice(-2);
 
-  const [activeParent, setActiveParent] = useState(null); // Track active parent link
+  const [activeParent, setActiveParent] = useState(null); 
 
   const toggleChildLinks = (index) => {
     if (activeParent === index) {
-      setActiveParent(null); // Close if clicking again on the active parent
+      setActiveParent(null); 
     } else {
-      setActiveParent(index); // Open clicked parent link
+      setActiveParent(index); 
     }
   };
 
@@ -71,12 +71,12 @@ export function Navigation({ navigation }) {
                 <PrismicText field={slice.primary.name} />
               </PrismicNextLink>
               {slice.items.length > 0 && (
-                <ul className="absolute left-1/2 transform -translate-x-1/2 text-center rounded hidden space-y-5 p-5 bg-white shadow-lg group-hover:block">
+                <ul className="absolute left-1/2 transform -translate-x-1/2 text-center rounded hidden space-y-5 p-5 pt-8 bg-white shadow-lg  group-hover:block whitespace-nowrap">
                   {slice.items.map((item, itemIndex) => (
                     <li key={itemIndex}>
                       <PrismicNextLink
                         field={item.child_link}
-                        className="hover:text-yellow-400"
+                        className="hover:text-yellow-400" 
                       >
                         <PrismicText field={item.child_name} />
                       </PrismicNextLink>
@@ -105,7 +105,7 @@ export function Navigation({ navigation }) {
         ))}
       </ul>
       {isMenuActive && (
-        <nav className="lg:hidden w-full pt-4">
+        <nav className="lg:hidden w-full pt-4 pb-4">
           <ul className="flex flex-col w-full">
             {navigation.data.slices.map((slice, index) => (
               <li
@@ -113,12 +113,10 @@ export function Navigation({ navigation }) {
                 className="font-medium py-4 border-b border-border-brand last:border-none last:pb-0 text-slate-700 hover:text-slate-800 relative"
               >
                 <div
-                  onClick={() => toggleChildLinks(index)} // Toggle children on click
+                  onClick={() => toggleChildLinks(index)} 
                   className="flex items-center justify-between cursor-pointer"
                 >
                   <PrismicText field={slice.primary.name} />
-
-                  {/* Display chevron with dynamic rotation based on activeParent */}
                   {slice.items.length > 0 && (
                     <svg
                       className={`w-4 h-4 ml-2 transform ${
@@ -141,12 +139,12 @@ export function Navigation({ navigation }) {
                 {activeParent === index && slice.items.length > 0 && (
                   <ul className="ms-5 mt-4 space-y-4">
                     {" "}
-                    <PrismicNextLink field={slice.primary.link}>
+                    <PrismicNextLink field={slice.primary.link}  onClick={handleMenuClick}>
                       <PrismicText field={slice.primary.name} />
                     </PrismicNextLink>
                     {slice.items.map((item, itemIndex) => (
                       <li key={itemIndex}>
-                        <PrismicNextLink field={item.child_link}>
+                        <PrismicNextLink field={item.child_link} onClick={handleMenuClick}>
                           <PrismicText field={item.child_name} />
                         </PrismicNextLink>
                       </li>

@@ -56,11 +56,8 @@ async function Header() {
   return (
     <div className="fixed top-0 left-0 w-full bg-white z-50 shadow-md">
       <Bounded as="header" yPadding="xs">
-        <div className="flex flex-wrap justify-between gap-x-6 gap-y-3 leading-none items-center">
-          <PrismicNextLink
-            href="/"
-            className="text-xl font-semibold tracking-tight flex flex-row items-center text-slate-800 gap-x-4"
-          >
+        <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 leading-none">
+          <PrismicNextLink href="/" className="flex items-center gap-x-4 text-slate-800 text-xl font-semibold tracking-tight">
             {prismic.isFilled.image(settings.data.logo) && (
               <PrismicNextImage
                 field={settings.data.logo}
@@ -89,9 +86,6 @@ async function Footer() {
 
   const primaryFooterTitle = footerLinksSlice?.primary?.footer_title[0]?.text || '';
   const primaryFooterDescription = footerLinksSlice?.primary?.footer_description[0]?.text || '';
-
-  console.log("************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************")
-  console.log(footerLinksSlice)
 
   return (
     <Bounded as="footer" yPadding="sm" className="bg-brand-dark">
