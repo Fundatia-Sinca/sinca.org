@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type ContactDocumentDataSlicesSlice = Hero2Slice;
+type ContactDocumentDataSlicesSlice = ComingSoonSlice | Hero2Slice;
 
 /**
  * Content for Contact documents
@@ -126,6 +126,7 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | ComingSoonSlice
   | LocationStatsSlice
   | FAskedQuestionsSlice
   | ProiecteRecenteSlice
@@ -293,6 +294,7 @@ export type PersoanaDocument<Lang extends string = string> =
   >;
 
 type ProiectDocumentDataSlicesSlice =
+  | ComingSoonSlice
   | TextSlice
   | Hero2Slice
   | TextTwoColSlice
@@ -535,6 +537,51 @@ export type AllDocumentTypes =
   | PersoanaDocument
   | ProiectDocument
   | SettingsDocument;
+
+/**
+ * Primary content in *ComingSoon → Primary*
+ */
+export interface ComingSoonSliceDefaultPrimary {
+  /**
+   * Title field in *ComingSoon → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: coming_soon.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+}
+
+/**
+ * Default variation for ComingSoon Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ComingSoonSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ComingSoonSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ComingSoon*
+ */
+type ComingSoonSliceVariation = ComingSoonSliceDefault;
+
+/**
+ * ComingSoon Shared Slice
+ *
+ * - **API ID**: `coming_soon`
+ * - **Description**: ComingSoon
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ComingSoonSlice = prismic.SharedSlice<
+  "coming_soon",
+  ComingSoonSliceVariation
+>;
 
 /**
  * Primary content in *ContactButtons → Primary*
@@ -2653,6 +2700,10 @@ declare module "@prismicio/client" {
       SettingsDocumentDataSocialsItem,
       SettingsDocumentDataSlicesSlice,
       AllDocumentTypes,
+      ComingSoonSlice,
+      ComingSoonSliceDefaultPrimary,
+      ComingSoonSliceVariation,
+      ComingSoonSliceDefault,
       ContactButtonsSlice,
       ContactButtonsSliceDefaultPrimary,
       ContactButtonsSliceVariation,
