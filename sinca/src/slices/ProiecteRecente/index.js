@@ -29,7 +29,7 @@ const ProiecteRecente = ({ slice }) => {
           <div className="md:w-1/4 md:flex text-left sm:text-center md:justify-end">
             <PrismicNextLink
               field={slice.primary.about_us}
-              className="py-3 px-5 bg-brand-dark text-white hover:bg-brand-darker inline-block rounded-md"
+              className="py-3 px-5 bg-brand-brown text-brand-light hover:bg-brand-light hover:text-brand-brown inline-block rounded-md"
             >
               <PrismicRichText field={slice.primary.about_us_label} />
             </PrismicNextLink>
@@ -53,7 +53,7 @@ const ProiecteRecente = ({ slice }) => {
                 </div>
                 <PrismicNextLink
                   field={proiect.project_link}
-                  className="mt-auto py-2 px-4 bg-brand-dark text-white hover:bg-brand-darker text-center rounded-md"
+                  className="mt-auto py-2 px-4 bg-brand-brown text-brand-light hover:bg-brand-light hover:text-brand-brown text-center rounded-md"
                 >
                   <PrismicRichText field={proiect.project_link_label} />
                 </PrismicNextLink>

@@ -63,11 +63,11 @@ export function Navigation({ navigation }) {
           {mainLinks.map((slice) => (
             <li
               key={prismic.asText(slice.primary.name)}
-              className="font-medium text-brand-darker  uppercase relative group"
+              className="font-medium text-brand-dark  uppercase relative group"
             >
               <PrismicNextLink
                 field={slice.primary.link}
-                className="hover:text-yellow-400"
+                className="hover:text-brand-brown"
               >
                 <PrismicText field={slice.primary.name} />
               </PrismicNextLink>
@@ -77,7 +77,7 @@ export function Navigation({ navigation }) {
                     <li key={itemIndex}>
                       <PrismicNextLink
                         field={item.child_link}
-                        className="hover:text-yellow-400" 
+                        className="hover:text-brand-brown" 
                       >
                         <PrismicText field={item.child_name} />
                       </PrismicNextLink>
@@ -95,8 +95,8 @@ export function Navigation({ navigation }) {
             <PrismicNextLink
               className={
                 prismic.asText(slice.primary.name) === "Donează"
-                  ? "py-3 px-5 bg-yellow-400 text-brand-darker hover:bg-brand-darker hover:text-white"
-                  : "text-brand-darker hover:text-yellow-400"
+                  ? "py-3 px-5 bg-brand-brown text-brand-light hover:bg-brand-light hover:text-brand-brown"
+                  : "text-brand-dark hover:text-brand-brown"
               }
               field={slice.primary.link}
             >
@@ -111,7 +111,7 @@ export function Navigation({ navigation }) {
             {navigation.data.slices.map((slice, index) => (
               <li
                 key={prismic.asText(slice.primary.name)}
-                className="font-medium py-4 border-b border-border-brand last:border-none last:pb-0 text-slate-700 hover:text-slate-800 relative"
+                className="font-medium py-4 border-b border-border-brand last:border-none last:pb-0 text-brand-dark  relative"
               >
                 <div
                   onClick={() => toggleChildLinks(index)} 

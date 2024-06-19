@@ -130,7 +130,7 @@ const Hero2 = ({ slice }) => {
             }
 
             .es-fullpage-hero__content__intro__eyebrow {
-              color: #47C1AF;
+              color: #a86848;
               font-size: 1.15rem;
               font-weight: 500;
               margin: 0;
@@ -185,12 +185,13 @@ const Hero2 = ({ slice }) => {
               line-height: 1.3;
               padding: 1rem 2.625rem;
               transition: background-color 100ms linear;
-              background-color: #16745f;
-              color: #fff;
+              background-color: #a86848;
+              color: #fff8e0;
             }
 
             .es-call-to-action__link:hover {
-              background-color: #0d5e4c;
+              background-color: #fff8e0;
+              color: #a86848;
             }
           `,
         }}

@@ -24,9 +24,9 @@ const FAskedQuestions = ({ slice }) => {
           <div className="absolute top-5 right-5 hidden sm:block">
             <PrismicLink
               field={slice.primary.contact_link}
-              className="py-3 px-5 bg-brand-dark text-white hover:bg-brand-darker inline-block rounded-md"
+              className="py-3 px-5 bg-brand-brown text-brand-light hover:bg-brand-light hover:text-brand-brown inline-block rounded-md"
             >
-              Contact Us
+              Contact
             </PrismicLink>
           </div>
           <div className="flex flex-col items-center">

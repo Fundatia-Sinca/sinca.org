@@ -33,7 +33,7 @@ const Parteneri = ({ slice }) => {
               <div class="my-5 h-16">
                 <div
                   class="shadow-md font-medium py-2 px-4 text-dark
-               cursor-pointer bg-yellow-400 hover:bg-brand-darker hover:text-white rounded text-lg text-center w-48"
+               cursor-pointer bg-brand-brown text-brand-light hover:bg-brand-light hover:text-brand-brown rounded text-lg text-center w-48"
                 >
                   Join us now
                 </div>
@@ -44,7 +44,7 @@ const Parteneri = ({ slice }) => {
                 {isFilled.richText(slice.primary.review) && (
                   <div class="text-md p-10 bg-white text-left relative"> 
                     <svg
-                      className="absolute left-2 top-2 text-slate-300 w-8 h-8"
+                      className="absolute left-2 top-2 text-brand-darker w-8 h-8"
                       height="48"
                       width="48"
                       viewBox="0 0 48 48"

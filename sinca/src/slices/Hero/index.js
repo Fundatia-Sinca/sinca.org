@@ -52,7 +52,7 @@ const Hero = ({ slice }) => {
                 {prismic.isFilled.link(slice.primary.buttonLink) && (
                   <PrismicNextLink
                     field={slice.primary.buttonLink}
-                    className="py-3 px-5 bg-yellow-400 text-brand-darker text-xl hover:bg-white hover:text-brand-dark hover:border hover:border-brand-dark inline-block"
+                    className="py-3 px-5 bg-brand-brown text-brand-light text-xl hover:bg-brand-light hover:text-brand-brown inline-block"
                   >
                     {slice.primary.buttonText || "Proiecte"}
                   </PrismicNextLink>
@@ -60,9 +60,9 @@ const Hero = ({ slice }) => {
                  {prismic.isFilled.link(slice.primary.link) && (
                   <PrismicNextLink
                     field={slice.primary.link}
-                    className="py-3 px-5 border border-yellow-400 text-brand-darker text-xl hover:bg-brand-darker hover:border-none hover:text-white inline-block"
+                    className="py-3 px-5 border border-brand-brown text-brand-darker text-xl hover:bg-brand-brown hover:border-none hover:text-brand-light inline-block"
                   >
-                    {slice.primary.linkText || 'Doneaza'}
+                    {slice.primary.linkText || 'Donează'}
                   </PrismicNextLink>
                 )}
               </div>

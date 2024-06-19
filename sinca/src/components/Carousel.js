@@ -10,7 +10,6 @@ const ArrowLeftIcon = () => (
     fill="none"
     viewBox="0 0 24 24"
     stroke="currentColor"
-    color='dark'
   >
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
   </svg>
@@ -23,7 +22,6 @@ const ArrowRightIcon = () => (
     fill="none"
     viewBox="0 0 24 24"
     stroke="currentColor"
-    color='dark'
   >
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
   </svg>
@@ -78,11 +76,11 @@ const Carousel = ({ items }) => {
     <div className="carousel-container relative overflow-hidden">
       {/* Previous and Next buttons */}
       <div className="flex justify-end items-center gap-4 sm:mx-0 mb-5">
-        <button onClick={prevSlide} className="transform bg-yellow-400 px-5 py-1 rounded-md z-10">
-          <ArrowLeftIcon className="h-6 w-6 mr-1 hover:bg-brand-darker hover:text-white" />
+        <button onClick={prevSlide} className="transform bg-brand-brown text-brand-light px-5 py-1 rounded-md z-10">
+          <ArrowLeftIcon className="h-6 w-6 mr-1 hover:bg-brand-light hover:text-brand-brown" />
         </button>
-        <button onClick={nextSlide} className="transform bg-yellow-400 px-5 py-1 rounded-md z-10">
-          <ArrowRightIcon className="h-6 w-6 ml-1 hover:bg-brand-darker hover:text-white" />
+        <button onClick={nextSlide} className="transform bg-brand-brown text-brand-light px-5 py-1 rounded-md z-10">
+          <ArrowRightIcon className="h-6 w-6 ml-1 hover:bg-brand-light hover:text-brand-brown" />
         </button>
       </div>
 
