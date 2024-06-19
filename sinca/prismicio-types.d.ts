@@ -293,9 +293,10 @@ export type PersoanaDocument<Lang extends string = string> =
   >;
 
 type ProiectDocumentDataSlicesSlice =
+  | TextSlice
+  | Hero2Slice
   | TextTwoColSlice
   | GallerySlice
-  | QuoteSlice
   | TextWithImageSlice;
 
 /**
@@ -2270,14 +2271,79 @@ export type SixBoxesSlice = prismic.SharedSlice<
  */
 export interface TextSliceDefaultPrimary {
   /**
-   * Text field in *Text → Primary*
+   * Title field in *Text → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: text.primary.text
+   * - **API ID Path**: text.primary.title
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  text: prismic.RichTextField;
+  title: prismic.RichTextField;
+
+  /**
+   * Main Photo field in *Text → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text.primary.main_photo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  main_photo: prismic.ImageField<never>;
+
+  /**
+   * Paragraph Title field in *Text → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text.primary.paragraph_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  paragraph_title: prismic.RichTextField;
+
+  /**
+   * Embeded field in *Text → Primary*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text.primary.embeded
+   * - **Documentation**: https://prismic.io/docs/field#embed
+   */
+  embeded: prismic.EmbedField;
+
+  /**
+   * Contact field in *Text → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text.primary.contact
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  contact: prismic.RichTextField;
+
+  /**
+   * CEO field in *Text → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text.primary.ceo
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  ceo: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Text → Items*
+ */
+export interface TextSliceDefaultItem {
+  /**
+   * Paragraph field in *Text → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text.items[].paragraph
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  paragraph: prismic.RichTextField;
 }
 
 /**
@@ -2290,7 +2356,7 @@ export interface TextSliceDefaultPrimary {
 export type TextSliceDefault = prismic.SharedSliceVariation<
   "default",
   Simplify<TextSliceDefaultPrimary>,
-  never
+  Simplify<TextSliceDefaultItem>
 >;
 
 /**
@@ -2682,6 +2748,7 @@ declare module "@prismicio/client" {
       SixBoxesSliceDefault,
       TextSlice,
       TextSliceDefaultPrimary,
+      TextSliceDefaultItem,
       TextSliceTwoColumnsPrimary,
       TextSliceVariation,
       TextSliceDefault,

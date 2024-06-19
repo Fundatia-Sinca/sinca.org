@@ -27,7 +27,7 @@ export function Navigation({ navigation }) {
   return (
     <>
       <button
-        className="lg:hidden font-medium text-slate-700"
+        className="custom-lg:hidden font-medium text-slate-700"
         onClick={handleMenuClick}
       >
         <svg viewBox="0 0 100 80" width="40" height="40">
@@ -57,7 +57,7 @@ export function Navigation({ navigation }) {
           ></rect>
         </svg>
       </button>
-      <nav className="hidden lg:block">
+      <nav className="hidden custom-lg:block">
         <ul className="flex flex-wrap gap-6 md:gap-10">
           {mainLinks.map((slice) => (
             <li
@@ -88,7 +88,7 @@ export function Navigation({ navigation }) {
           ))}
         </ul>
       </nav>
-      <ul className="hidden lg:flex flex-wrap gap-6 md:gap-10 ml-auto uppercase">
+      <ul className="hidden custom-lg:flex flex-wrap gap-6 md:gap-10 ml-auto uppercase">
         {specialLinks.map((slice) => (
           <li key={prismic.asText(slice.primary.name)} className="font-medium">
             <PrismicNextLink
@@ -105,7 +105,7 @@ export function Navigation({ navigation }) {
         ))}
       </ul>
       {isMenuActive && (
-        <nav className="lg:hidden w-full pt-4 pb-4">
+        <nav className="custom-lg:hidden w-full pt-4 pb-4">
           <ul className="flex flex-col w-full">
             {navigation.data.slices.map((slice, index) => (
               <li
