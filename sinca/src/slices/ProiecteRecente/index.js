@@ -1,5 +1,6 @@
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
+import { isFilled } from "@prismicio/client";
 
 /**
  * @typedef {import("@prismicio/client").Content.ProiecteRecenteSlice} ProiecteRecenteSlice
@@ -11,24 +12,28 @@ const ProiecteRecente = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="max-w-screen-xl m-auto text-center"
+      className="max-w-screen-xl m-auto text-center  px-8 lg:px-0"
     >
       <div className="m-auto max-w-6xl sm:py-8">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
-          <div className="flex flex-col mb-4 md:mb-0">
-            <span className="text-2xl md:text-5xl text-left uppercase text-black font-black mb-2 md:mb-4">
-              <PrismicRichText field={slice.primary.title} />
-            </span>
+          <div className="flex flex-col mb-4 md:mb-0 md:w-3/4">
+            {isFilled.richText(slice.primary.title) && (
+              <div class="md:text-5xl text-2xl text-left uppercase font-black mb-2 md:mb-4">
+                <PrismicRichText field={slice.primary.title} />
+              </div>
+            )}
             <div className="text-left text-base md:text-lg">
               <PrismicRichText field={slice.primary.description} />
             </div>
           </div>
-          <PrismicNextLink
-            field={slice.primary.about_us}
-            className="py-3 px-5 bg-brand-dark text-white hover:bg-brand-darker inline-block rounded-md"
-          >
-            <PrismicRichText field={slice.primary.about_us_label} />
-          </PrismicNextLink>
+          <div className="md:w-1/4 md:flex text-left sm:text-center md:justify-end">
+            <PrismicNextLink
+              field={slice.primary.about_us}
+              className="py-3 px-5 bg-brand-dark text-white hover:bg-brand-darker inline-block rounded-md"
+            >
+              <PrismicRichText field={slice.primary.about_us_label} />
+            </PrismicNextLink>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
@@ -43,14 +48,8 @@ const ProiecteRecente = ({ slice }) => {
               />
               <div className="flex flex-col flex-grow p-4">
                 <div className="flex flex-col flex-grow mb-4">
-                  <PrismicRichText
-                    field={proiect.project_title}
-                    className="text-lg font-bold mb-2"
-                  />
-                  <PrismicRichText
-                    field={proiect.project_short_description}
-                    className="text-sm text-gray-600"
-                  />
+                  <PrismicRichText field={proiect.project_title} />
+                  <PrismicRichText field={proiect.project_short_description} />
                 </div>
                 <PrismicNextLink
                   field={proiect.project_link}

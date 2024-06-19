@@ -87,7 +87,7 @@ const Hero = ({ slice }) => {
           
         </div>
       </Bounded>
-      <div className="w-full md:max-w-sm xl:max-w-xl mt-10 sm:mt-0">
+      <div className="w-full md:max-w-sm xl:max-w-xl mt-10 md:mt-0">
         {prismic.isFilled.image(mainImage) && (
           <PrismicNextImage
             field={mainImage}

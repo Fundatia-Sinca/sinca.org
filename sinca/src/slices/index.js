@@ -6,6 +6,7 @@ export const components = {
   contact_buttons: dynamic(() => import("./ContactButtons")),
   customer_logos: dynamic(() => import("./CustomerLogos")),
   echipa: dynamic(() => import("./Echipa")),
+  f_asked_questions: dynamic(() => import("./FAskedQuestions")),
   gallery: dynamic(() => import("./Gallery")),
   hero: dynamic(() => import("./Hero")),
   hero_2: dynamic(() => import("./Hero2")),

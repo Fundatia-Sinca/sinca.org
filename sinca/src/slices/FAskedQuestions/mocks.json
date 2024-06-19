@@ -1,0 +1,72 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Officia aliqua exercitation dolor ea ipsum dolore sit. Cupidatat et sit incididunt excepteur eiusmod laboris velit deserunt ipsum duis laborum nostrud."
+						}
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Et amet dolore amet consectetur do excepteur. Sint officia velit irure duis cillum."
+						}
+					}
+				]
+			},
+			"contact_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com"
+				}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"question_title",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Et eiusmod esse sunt ut adipisicing. Dolor amet pariatur consequat tempor consequat dolor eu. Reprehenderit Lorem deserunt do amet proident commodo sint enim nostrud sunt excepteur mollit duis minim."
+									}
+								}
+							]
+						}
+					],
+					[
+						"question_answer",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Ipsum irure non dolore magna ut aliquip occaecat nulla culpa et labore. Nostrud incididunt ex nulla cillum."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	}
+]

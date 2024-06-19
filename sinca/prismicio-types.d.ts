@@ -126,6 +126,7 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | FAskedQuestionsSlice
   | ProiecteRecenteSlice
   | HeroFullPhotoSlice
   | ImageCardsSlice
@@ -766,6 +767,96 @@ type EchipaSliceVariation = EchipaSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type EchipaSlice = prismic.SharedSlice<"echipa", EchipaSliceVariation>;
+
+/**
+ * Primary content in *FAskedQuestions → Primary*
+ */
+export interface FAskedQuestionsSliceDefaultPrimary {
+  /**
+   * Title field in *FAskedQuestions → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: f_asked_questions.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *FAskedQuestions → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: f_asked_questions.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * contact link field in *FAskedQuestions → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: f_asked_questions.primary.contact_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  contact_link: prismic.LinkField;
+}
+
+/**
+ * Primary content in *FAskedQuestions → Items*
+ */
+export interface FAskedQuestionsSliceDefaultItem {
+  /**
+   * Question Title field in *FAskedQuestions → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: f_asked_questions.items[].question_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  question_title: prismic.RichTextField;
+
+  /**
+   * Question Answer field in *FAskedQuestions → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: f_asked_questions.items[].question_answer
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  question_answer: prismic.RichTextField;
+}
+
+/**
+ * Default variation for FAskedQuestions Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FAskedQuestionsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FAskedQuestionsSliceDefaultPrimary>,
+  Simplify<FAskedQuestionsSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *FAskedQuestions*
+ */
+type FAskedQuestionsSliceVariation = FAskedQuestionsSliceDefault;
+
+/**
+ * FAskedQuestions Shared Slice
+ *
+ * - **API ID**: `f_asked_questions`
+ * - **Description**: FAskedQuestions
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FAskedQuestionsSlice = prismic.SharedSlice<
+  "f_asked_questions",
+  FAskedQuestionsSliceVariation
+>;
 
 /**
  * Primary content in *Gallery → Items*
@@ -2324,6 +2415,11 @@ declare module "@prismicio/client" {
       EchipaSliceDefaultPrimary,
       EchipaSliceVariation,
       EchipaSliceDefault,
+      FAskedQuestionsSlice,
+      FAskedQuestionsSliceDefaultPrimary,
+      FAskedQuestionsSliceDefaultItem,
+      FAskedQuestionsSliceVariation,
+      FAskedQuestionsSliceDefault,
       GallerySlice,
       GallerySliceDefaultItem,
       GallerySliceVariation,
