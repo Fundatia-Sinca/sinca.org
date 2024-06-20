@@ -126,6 +126,7 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | BannerFundatiaSincaSlice
   | ComingSoonSlice
   | LocationStatsSlice
   | FAskedQuestionsSlice
@@ -294,6 +295,7 @@ export type PersoanaDocument<Lang extends string = string> =
   >;
 
 type ProiectDocumentDataSlicesSlice =
+  | BannerFundatiaSincaSlice
   | ComingSoonSlice
   | TextSlice
   | Hero2Slice
@@ -537,6 +539,211 @@ export type AllDocumentTypes =
   | PersoanaDocument
   | ProiectDocument
   | SettingsDocument;
+
+/**
+ * Primary content in *BannerFundatiaSinca → Primary*
+ */
+export interface BannerFundatiaSincaSliceDefaultPrimary {
+  /**
+   * Title field in *BannerFundatiaSinca → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner_fundatia_sinca.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Image field in *BannerFundatiaSinca → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner_fundatia_sinca.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Image Description field in *BannerFundatiaSinca → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner_fundatia_sinca.primary.image_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  image_description: prismic.RichTextField;
+
+  /**
+   * Button field in *BannerFundatiaSinca → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner_fundatia_sinca.primary.button
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button: prismic.LinkField;
+
+  /**
+   * Button Label field in *BannerFundatiaSinca → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner_fundatia_sinca.primary.button_label
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  button_label: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *BannerFundatiaSinca → Items*
+ */
+export interface BannerFundatiaSincaSliceDefaultItem {
+  /**
+   * How To Help Us Title field in *BannerFundatiaSinca → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner_fundatia_sinca.items[].how_to_help_us_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  how_to_help_us_title: prismic.RichTextField;
+
+  /**
+   * How To Help Us Paragraph field in *BannerFundatiaSinca → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner_fundatia_sinca.items[].how_to_help_us_paragraph
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  how_to_help_us_paragraph: prismic.RichTextField;
+}
+
+/**
+ * Default variation for BannerFundatiaSinca Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BannerFundatiaSincaSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BannerFundatiaSincaSliceDefaultPrimary>,
+  Simplify<BannerFundatiaSincaSliceDefaultItem>
+>;
+
+/**
+ * Primary content in *BannerFundatiaSinca → Primary*
+ */
+export interface BannerFundatiaSincaSliceImageRightPrimary {
+  /**
+   * Title field in *BannerFundatiaSinca → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner_fundatia_sinca.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Image field in *BannerFundatiaSinca → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner_fundatia_sinca.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Image Description field in *BannerFundatiaSinca → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner_fundatia_sinca.primary.image_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  image_description: prismic.RichTextField;
+
+  /**
+   * Button field in *BannerFundatiaSinca → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner_fundatia_sinca.primary.button
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button: prismic.LinkField;
+
+  /**
+   * Button Label field in *BannerFundatiaSinca → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner_fundatia_sinca.primary.button_label
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  button_label: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *BannerFundatiaSinca → Items*
+ */
+export interface BannerFundatiaSincaSliceImageRightItem {
+  /**
+   * How To Help Us Title field in *BannerFundatiaSinca → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner_fundatia_sinca.items[].how_to_help_us_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  how_to_help_us_title: prismic.RichTextField;
+
+  /**
+   * How To Help Us Paragraph field in *BannerFundatiaSinca → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner_fundatia_sinca.items[].how_to_help_us_paragraph
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  how_to_help_us_paragraph: prismic.RichTextField;
+}
+
+/**
+ * Image Right variation for BannerFundatiaSinca Slice
+ *
+ * - **API ID**: `imageRight`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BannerFundatiaSincaSliceImageRight = prismic.SharedSliceVariation<
+  "imageRight",
+  Simplify<BannerFundatiaSincaSliceImageRightPrimary>,
+  Simplify<BannerFundatiaSincaSliceImageRightItem>
+>;
+
+/**
+ * Slice variation for *BannerFundatiaSinca*
+ */
+type BannerFundatiaSincaSliceVariation =
+  | BannerFundatiaSincaSliceDefault
+  | BannerFundatiaSincaSliceImageRight;
+
+/**
+ * BannerFundatiaSinca Shared Slice
+ *
+ * - **API ID**: `banner_fundatia_sinca`
+ * - **Description**: BannerFundatiaSinca
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BannerFundatiaSincaSlice = prismic.SharedSlice<
+  "banner_fundatia_sinca",
+  BannerFundatiaSincaSliceVariation
+>;
 
 /**
  * Primary content in *ComingSoon → Primary*
@@ -2700,6 +2907,14 @@ declare module "@prismicio/client" {
       SettingsDocumentDataSocialsItem,
       SettingsDocumentDataSlicesSlice,
       AllDocumentTypes,
+      BannerFundatiaSincaSlice,
+      BannerFundatiaSincaSliceDefaultPrimary,
+      BannerFundatiaSincaSliceDefaultItem,
+      BannerFundatiaSincaSliceImageRightPrimary,
+      BannerFundatiaSincaSliceImageRightItem,
+      BannerFundatiaSincaSliceVariation,
+      BannerFundatiaSincaSliceDefault,
+      BannerFundatiaSincaSliceImageRight,
       ComingSoonSlice,
       ComingSoonSliceDefaultPrimary,
       ComingSoonSliceVariation,

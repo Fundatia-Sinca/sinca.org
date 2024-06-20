@@ -52,6 +52,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "banner_fundatia_sinca": {
+              "type": "SharedSlice"
+            },
             "coming_soon": {
               "type": "SharedSlice"
             },

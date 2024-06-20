@@ -16,8 +16,11 @@ const Echipa = async ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className="relative bg-brand-superlight"
-    >
-      <div className="bg-brand absolute h-full max-h-[40rem] top-0 w-full"></div>
+    >  
+    {/* <span> 
+      lorem ipsum dolor sit amet est laborum. lorem ipsum dolor sit amet est laborum. lorem ipsum dolor sit amet est laborum. 
+    </span> */}
+      <div className="bg-brand-dark absolute h-full max-h-[40rem] top-0 w-full"></div>
       <div className="max-w-screen-xl m-auto px-8 py-14 md:py-32 relative">
         <div className="md:grid grid-cols-2 gap-8 lg:pb-14">
           <div>
@@ -26,12 +29,12 @@ const Echipa = async ({ slice }) => {
               <span className="ml-4 text-lg font-semibold">{slice.primary.eyebrow}</span>
             </p>
             {isFilled.richText(slice.primary.title) &&
-              <div className="text-slate-800 py-4">
+              <div className="text-brand-light py-4">
                 <PrismicRichText field={slice.primary.title}/>
               </div>
             }
           </div>
-          <div className="text-slate-700 text-lg">
+          <div className="text-brand-light text-lg">
             {isFilled.richText(slice.primary.text) &&
               <PrismicRichText field={slice.primary.text}/>
             }
@@ -41,8 +44,8 @@ const Echipa = async ({ slice }) => {
             {persoane.map((item) => (
               <div className="pb-10 last:pb-0" key={item.id}>
                 <PrismicNextImage className="max-w-96 max-h-96 object-cover" field={item.data.image} />
-                <div className="font-bold pt-6 pb-2 text-xl text-slate-800">{item.data.nume}</div>
-                <div className="text-lg text-slate-600">{item.data.pozitie}</div>
+                <div className="font-bold pt-6 pb-2 text-xl text-brand-dark">{item.data.nume}</div>
+                <div className="text-lg text-brand-darklight">{item.data.pozitie}</div>
               </div>
             ))}
         </div>

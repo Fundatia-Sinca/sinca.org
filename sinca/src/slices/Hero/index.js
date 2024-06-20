@@ -4,6 +4,8 @@ import { PrismicNextLink, PrismicNextImage } from "@prismicio/next";
 import { Bounded } from "@/components/Bounded";
 import { Heading } from "@/components/Heading";
 import { PrismicRichText } from "@/components/PrismicRichText";
+import { PrismicText } from "@prismicio/react";
+
 
 /** @type {import("@prismicio/react").PrismicRichTextProps['components']} */
 const components = {
@@ -34,7 +36,7 @@ const Hero = ({ slice }) => {
       <Bounded yPadding="none" className="relative">
         <div className={slice.variation == 'hero2' ? "max-w-xl pr-4 grid justify-items-center gap-8" : "grid justify-items-center gap-8"}>
           <div className="md:text-5xl text-2xl text-left uppercase text-black font-black">
-            <PrismicRichText
+            <PrismicText
               field={slice.primary.title}
               components={components}
             />

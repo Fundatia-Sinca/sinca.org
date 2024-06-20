@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  banner_fundatia_sinca: dynamic(() => import("./BannerFundatiaSinca")),
   coming_soon: dynamic(() => import("./ComingSoon")),
   contact_buttons: dynamic(() => import("./ContactButtons")),
   customer_logos: dynamic(() => import("./CustomerLogos")),

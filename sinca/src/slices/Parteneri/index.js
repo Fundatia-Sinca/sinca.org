@@ -1,5 +1,6 @@
 import { PrismicRichText } from "@/components/PrismicRichText";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import { PrismicText } from "@prismicio/react";
 import { isFilled } from "@prismicio/client";
 import dynamic from "next/dynamic";
 
@@ -24,7 +25,7 @@ const Parteneri = ({ slice }) => {
           <div class="flex flex-col md:flex-row">
             <div class="md:w-1/2 flex flex-col">
             {isFilled.richText(slice.primary.title) && (<div class="md:text-5xl text-2xl text-left uppercase font-black">
-              <PrismicRichText field={slice.primary.title} />
+              <PrismicText field={slice.primary.title} />
               </div>)}
        
               {isFilled.richText(slice.primary.text) && (<div class="text-xl text-left mt-4">

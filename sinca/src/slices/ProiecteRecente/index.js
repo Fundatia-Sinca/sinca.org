@@ -1,6 +1,7 @@
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
 import { isFilled } from "@prismicio/client";
+import { PrismicText } from "@prismicio/react";
 
 /**
  * @typedef {import("@prismicio/client").Content.ProiecteRecenteSlice} ProiecteRecenteSlice
@@ -19,7 +20,7 @@ const ProiecteRecente = ({ slice }) => {
           <div className="flex flex-col mb-4 md:mb-0 md:w-3/4">
             {isFilled.richText(slice.primary.title) && (
               <div class="md:text-5xl text-2xl text-left uppercase font-black mb-2 md:mb-4">
-                <PrismicRichText field={slice.primary.title} />
+                <PrismicText field={slice.primary.title} />
               </div>
             )}
             <div className="text-left text-base md:text-lg">
