@@ -10,9 +10,14 @@ import {
 import * as prismic from "@prismicio/client";
 
 import { createClient, repositoryName } from "@/prismicio";
+
 import { Bounded } from "@/components/Bounded";
 import { Navigation } from "@/components/Navigation";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
+
 import FooterLinks from "@/slices/FooterLinks";
+
+
 
 const inter = Inter({
   subsets: ["latin"],
@@ -33,6 +38,7 @@ export default async function RootLayout({ children }) {
         <SocialLinks />
         <Footer />
         <PrismicPreview repositoryName={repositoryName} />
+        <ScrollToTopButton />
         <script
           async
           defer

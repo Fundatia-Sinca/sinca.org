@@ -136,6 +136,7 @@ export function Navigation({ navigation }) {
                   )}
                 </div>
 
+                {/* Render child links only if this parent is active */}
                 {activeParent === index && slice.items.length > 0 && (
                   <ul className="ms-5 mt-4 space-y-4">
                     {" "}
