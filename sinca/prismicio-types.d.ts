@@ -516,6 +516,17 @@ interface SettingsDocumentData {
   location: prismic.RichTextField;
 
   /**
+   * Phone Number field in *Settings*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.phone_number
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  phone_number: prismic.RichTextField;
+
+  /**
    * Slice Zone field in *Settings*
    *
    * - **Field Type**: Slice Zone

@@ -19,7 +19,7 @@ const ProiecteRecente = ({ slice }) => {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
           <div className="flex flex-col mb-4 md:mb-0 md:w-3/4">
             {isFilled.richText(slice.primary.title) && (
-              <div class="md:text-5xl text-2xl text-left uppercase font-black mb-2 md:mb-4">
+              <div class="md:text-5xl text-3xl text-left uppercase font-black mb-2 md:mb-4">
                 <PrismicText field={slice.primary.title} />
               </div>
             )}

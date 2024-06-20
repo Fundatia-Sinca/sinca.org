@@ -24,7 +24,7 @@ const Parteneri = ({ slice }) => {
         <div class="m-auto max-w-6xl sm:py-8">
           <div class="flex flex-col md:flex-row">
             <div class="md:w-1/2 flex flex-col">
-            {isFilled.richText(slice.primary.title) && (<div class="md:text-5xl text-2xl text-left uppercase font-black">
+            {isFilled.richText(slice.primary.title) && (<div class="md:text-5xl text-3xl text-left uppercase font-black">
               <PrismicText field={slice.primary.title} />
               </div>)}
        
