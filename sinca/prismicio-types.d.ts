@@ -505,6 +505,17 @@ interface SettingsDocumentData {
   socials: prismic.GroupField<Simplify<SettingsDocumentDataSocialsItem>>;
 
   /**
+   * Location field in *Settings*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.location
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  location: prismic.RichTextField;
+
+  /**
    * Slice Zone field in *Settings*
    *
    * - **Field Type**: Slice Zone

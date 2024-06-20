@@ -17,10 +17,7 @@ const Echipa = async ({ slice }) => {
       data-slice-variation={slice.variation}
       className="relative bg-brand-superlight"
     >  
-    {/* <span> 
-      lorem ipsum dolor sit amet est laborum. lorem ipsum dolor sit amet est laborum. lorem ipsum dolor sit amet est laborum. 
-    </span> */}
-      <div className="bg-brand-dark absolute h-full max-h-[40rem] top-0 w-full"></div>
+      <div className="bg-brand-dark absolute h-full max-h-[80rem] sm:max-h-[40rem] top-0 w-full"></div>
       <div className="max-w-screen-xl m-auto px-8 py-14 md:py-32 relative">
         <div className="md:grid grid-cols-2 gap-8 lg:pb-14">
           <div>
@@ -40,10 +37,10 @@ const Echipa = async ({ slice }) => {
             }
           </div>
         </div>
-        <div className="pt-12 md:grid grid-cols-3 gap-8">
+        <div className="pt-12 grid sm:grid-cols-2 md:grid-cols-3 gap-8">
             {persoane.map((item) => (
               <div className="pb-10 last:pb-0" key={item.id}>
-                <PrismicNextImage className="max-w-96 max-h-96 object-cover" field={item.data.image} />
+                <PrismicNextImage className="max-w-96 sm:max-h-96 object-cover" field={item.data.image} />
                 <div className="font-bold pt-6 pb-2 text-xl text-brand-dark">{item.data.nume}</div>
                 <div className="text-lg text-brand-darklight">{item.data.pozitie}</div>
               </div>
