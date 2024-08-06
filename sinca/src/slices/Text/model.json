@@ -11,69 +11,17 @@
       "version": "sktwi1xtmkfgx8626",
       "description": "Text",
       "primary": {
-        "title": {
+        "text": {
           "type": "StructuredText",
           "config": {
-            "label": "Title",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-          }
-        },
-        "main_photo": {
-          "type": "Image",
-          "config": {
-            "label": "Main Photo",
-            "constraint": {},
-            "thumbnails": []
-          }
-        },
-        "paragraph_title": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Paragraph Title",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-          }
-        },
-        "embeded": {
-          "type": "Embed",
-          "config": {
-            "label": "Embeded",
-            "placeholder": ""
-          }
-        },
-        "contact": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Contact",
+            "label": "Text",
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,heading1,heading2,heading3,strong,em,hyperlink,list-item,o-list-item"
           }
-        },
-        "ceo": {
-          "type": "StructuredText",
-          "config": {
-            "label": "CEO",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-          }
         }
       },
-      "items": {
-        "paragraph": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Paragraph",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-          }
-        }
-      },
+      "items": {},
       "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
     },
     {

@@ -1,34 +1,32 @@
 {
-  "format": "custom",
   "id": "navigation",
   "label": "Navigation",
+  "format": "custom",
   "repeatable": false,
   "status": true,
   "json": {
     "Main": {
-      "uid": {
-        "type": "UID",
+      "links": {
+        "type": "Group",
         "config": {
-          "label": "UID",
-          "placeholder": ""
-        }
-      },
-      "navigation_list": {
-        "type": "StructuredText",
-        "config": {
-          "label": "Navigation List",
-          "placeholder": "",
-          "allowTargetBlank": true,
-          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-        }
-      },
-      "slices": {
-        "type": "Slices",
-        "fieldset": "Slice Zone",
-        "config": {
-          "choices": {
-            "navigation_item": {
-              "type": "SharedSlice"
+          "label": "Links",
+          "fields": {
+            "label": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Label",
+                "placeholder": "Optional - Label for the link",
+                "allowTargetBlank": false,
+                "single": "heading3"
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "Link for navigation item",
+                "select": null
+              }
             }
           }
         }

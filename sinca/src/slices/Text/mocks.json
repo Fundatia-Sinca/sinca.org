@@ -1,144 +1,66 @@
 [
-	{
-		"__TYPE__": "SharedSliceContent",
-		"variation": "default",
-		"primary": {
-			"title": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Ullamco fugiat cillum esse incididunt labore consequat occaecat dolor mollit commodo irure nostrud qui enim. Consectetur et ad elit adipisicing Lorem velit amet cillum ipsum dolore labore. Aute proident nulla pariatur."
-						}
-					}
-				]
-			},
-			"embeded": {
-				"embed_url": "https://twitter.com/prismicio/status/1354112310252630016",
-				"author_name": "Prismic",
-				"author_url": "https://twitter.com/prismicio",
-				"html": "<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">We&#39;re launching a new <a href=\"https://twitter.com/hashtag/SliceContest?src=hash&amp;ref_src=twsrc%5Etfw\">#SliceContest</a> tomorrow along with Slice Machine upgrades.<br><br>Want to know more? Join us at tomorrow&#39;s Product Meet-up👇<a href=\"https://t.co/prYSypiAvB\">https://t.co/prYSypiAvB</a><br><br>We can&#39;t tell you any further details for now, but here&#39;s a sneak peek at the prizes👀 <a href=\"https://t.co/fV1eoGlEBh\">pic.twitter.com/fV1eoGlEBh</a></p>&mdash; Prismic (@prismicio) <a href=\"https://twitter.com/prismicio/status/1354112310252630016?ref_src=twsrc%5Etfw\">January 26, 2021</a></blockquote>\n<script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>\n",
-				"type": "rich",
-				"cache_age": "3153600000",
-				"provider_name": "Twitter",
-				"provider_url": "http://www.twitter.com/",
-				"version": "1.0",
-				"all": {
-					"embed_url": "https://twitter.com/prismicio/status/1354112310252630016",
-					"author_name": "Prismic",
-					"author_url": "https://twitter.com/prismicio",
-					"html": "<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">We&#39;re launching a new <a href=\"https://twitter.com/hashtag/SliceContest?src=hash&amp;ref_src=twsrc%5Etfw\">#SliceContest</a> tomorrow along with Slice Machine upgrades.<br><br>Want to know more? Join us at tomorrow&#39;s Product Meet-up👇<a href=\"https://t.co/prYSypiAvB\">https://t.co/prYSypiAvB</a><br><br>We can&#39;t tell you any further details for now, but here&#39;s a sneak peek at the prizes👀 <a href=\"https://t.co/fV1eoGlEBh\">pic.twitter.com/fV1eoGlEBh</a></p>&mdash; Prismic (@prismicio) <a href=\"https://twitter.com/prismicio/status/1354112310252630016?ref_src=twsrc%5Etfw\">January 26, 2021</a></blockquote>\n<script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>\n",
-					"width": 550,
-					"height": null,
-					"type": "rich",
-					"cache_age": "3153600000",
-					"provider_name": "Twitter",
-					"provider_url": "http://www.twitter.com/",
-					"version": "1.0"
-				},
-				"__TYPE__": "EmbedContent"
-			},
-			"ceo": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Ipsum eu proident eu excepteur mollit cupidatat. Laborum duis reprehenderit minim dolore aliquip tempor dolor nisi occaecat. Culpa enim nostrud et dolore voluptate voluptate deserunt ex exercitation."
-						}
-					}
-				]
-			},
-			"main_photo": {
-				"origin": {
-					"id": "main",
-					"url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89",
-					"width": 3456,
-					"height": 3456
-				},
-				"url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89",
-				"width": 3456,
-				"height": 3456,
-				"edit": {
-					"zoom": 1,
-					"crop": {
-						"x": 0,
-						"y": 0
-					},
-					"background": "transparent"
-				},
-				"credits": null,
-				"alt": null,
-				"__TYPE__": "ImageContent",
-				"thumbnails": {}
-			},
-			"paragraph_title": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Exercitation magna aliqua est nulla ex anim exercitation velit culpa ullamco duis. Nostrud ea nulla exercitation ullamco fugiat enim. Laboris voluptate ea non nisi."
-						}
-					}
-				]
-			},
-			"contact": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Ex Lorem irure officia. Sit in aliquip sunt labore aute do dolor tempor fugiat laboris nostrud. Ea veniam est incididunt est eiusmod fugiat ipsum enim pariatur minim voluptate non magna adipisicing."
-						}
-					}
-				]
-			}
-		},
-		"items": [
-			{
-				"__TYPE__": "GroupItemContent",
-				"value": [
-					[
-						"paragraph",
-						{
-							"__TYPE__": "StructuredTextContent",
-							"value": [
-								{
-									"type": "paragraph",
-									"content": {
-										"text": "Dolor sit elit id ea laborum incididunt enim. Ut deserunt adipisicing dolore duis excepteur reprehenderit aliquip ut duis ut nulla aute."
-									}
-								}
-							]
-						}
-					]
-				]
-			}
-		]
-	},
-	{
-		"__TYPE__": "SharedSliceContent",
-		"variation": "twoColumns",
-		"primary": {
-			"text": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Veniam commodo cupidatat aliquip elit officia in. Consequat sunt sunt non deserunt ullamco sint."
-						}
-					}
-				]
-			}
-		},
-		"items": [
-			{
-				"__TYPE__": "GroupItemContent",
-				"value": []
-			}
-		]
-	}
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "text": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Fugiat ex ea dolor. Nisi non in et sit anim elit nostrud sunt id veniam. Voluptate mollit duis duis esse enim nostrud ea exercitation irure officia amet aute do quis."
+            }
+          },
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Incididunt ea dolore in cupidatat quis dolor sunt minim reprehenderit. Voluptate laboris proident ex quis labore aute eu officia cillum ex. Fugiat dolor elit veniam adipisicing est esse ullamco commodo amet esse sunt."
+            }
+          },
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Culpa duis nisi irure. Eu voluptate velit consequat adipisicing officia cupidatat minim qui. Reprehenderit fugiat deserunt nisi mollit nulla deserunt velit dolor irure officia enim."
+            }
+          },
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Magna anim duis aliqua mollit qui aute."
+            }
+          }
+        ]
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  },
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "twoColumns",
+    "primary": {
+      "text": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Veniam commodo cupidatat aliquip elit officia in. Consequat sunt sunt non deserunt ullamco sint."
+            }
+          }
+        ]
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
 ]

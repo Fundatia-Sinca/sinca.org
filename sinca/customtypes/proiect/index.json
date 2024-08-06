@@ -52,22 +52,13 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "banner_fundatia_sinca": {
-              "type": "SharedSlice"
-            },
-            "coming_soon": {
-              "type": "SharedSlice"
-            },
-            "text": {
-              "type": "SharedSlice"
-            },
-            "hero_2": {
-              "type": "SharedSlice"
-            },
             "text_two_col": {
               "type": "SharedSlice"
             },
             "gallery": {
+              "type": "SharedSlice"
+            },
+            "quote": {
               "type": "SharedSlice"
             },
             "text_with_image": {

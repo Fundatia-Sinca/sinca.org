@@ -54,15 +54,6 @@
       "version": "sktwi1xtmkfgx8626",
       "description": "Hero",
       "primary": {
-        "title": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Title",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl,heading1,heading3,heading2,heading4,heading5,heading6"
-          }
-        },
         "text": {
           "type": "StructuredText",
           "config": {
@@ -108,6 +99,15 @@
             "label": "Image",
             "constraint": {},
             "thumbnails": []
+          }
+        },
+        "review": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Review",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         }
       },

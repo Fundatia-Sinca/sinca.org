@@ -23,7 +23,7 @@ export default async function RootLayout({ children }) {
     <html lang="en" className={inter.variable}>
       <body className="overflow-x-hidden antialiased bg-brand-light">
         {/* @ts-expect-error Async Server Component */}
-        {/* <Header /> */}
+        <Header />
         {children}
         <Footer />
         <PrismicPreview repositoryName={repositoryName} />

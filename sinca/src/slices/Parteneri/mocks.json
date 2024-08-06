@@ -7,9 +7,9 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading1",
+						"type": "paragraph",
 						"content": {
-							"text": "Trade"
+							"text": "Aliquip enim excepteur do tempor officia proident do cupidatat nisi deserunt in qui ad enim. Est aliqua excepteur duis nulla esse proident labore ad in ex mollit minim."
 						}
 					}
 				]
@@ -21,17 +21,6 @@
 						"type": "paragraph",
 						"content": {
 							"text": "Irure exercitation velit culpa proident."
-						}
-					}
-				]
-			},
-			"review": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Ipsum ex irure ex quis enim culpa adipisicing. Elit ut ut nisi pariatur do consectetur cupidatat consequat laboris ea."
 						}
 					}
 				]
