@@ -22,7 +22,7 @@ export function Navigation({ navigation }) {
         </button>
         <nav className="hidden lg:block">
           <ul className="flex flex-wrap gap-6 md:gap-10">
-            {navigation.data?.links.slice(0, -2).map((item) => (
+            {navigation.data?.links?.slice(0, -2).map((item) => (
               <li
                 key={prismic.asText(item.label)}
                 className="font-medium text-slate-700 hover:text-slate-800"
@@ -35,7 +35,7 @@ export function Navigation({ navigation }) {
           </ul>
         </nav>
         <ul className="hidden lg:flex flex-wrap gap-6 md:gap-10 ml-auto">
-        {navigation.data?.links.slice(-2).map((item) => (
+        {navigation.data?.links?.slice(-2).map((item) => (
               <li
                 key={prismic.asText(item.label)}
                 className="font-medium"
@@ -49,7 +49,7 @@ export function Navigation({ navigation }) {
         </ul>
         {isMenuActive && <nav className="w-full pt-4">
             <ul className="flex flex-col w-full">
-                {navigation.data?.links.map((item) => (
+                {navigation.data?.links?.map((item) => (
                 <li
                     onClick={handleMenuClick}
                     key={prismic.asText(item.label)}
