@@ -69,6 +69,6 @@ export async function generateStaticParams() {
 
   const proiecte = await client.getAllByType("proiect");
   return proiecte.map((page) => {
-    return { uid: page.uid };
+    return { uid: String(page.uid) };
   });
 }
